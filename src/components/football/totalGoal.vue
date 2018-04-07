@@ -38,6 +38,7 @@
                     <td style="width: 354px">
                       {{items.Match_Master}}
                       <br>
+
                       {{items.Match_Guest}}
                     </td>
                     <td style="width: 78px">
