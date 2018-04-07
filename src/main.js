@@ -3,11 +3,10 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import axios from  'axios'
 
-import $ from 'jquery'
-import vueX from 'vuex'
 // import '../static/css/mem_header_ft_cn.css'
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
 new Vue({
@@ -15,4 +14,4 @@ new Vue({
   router,
   components: { App },
   template: '<App/>'
-})
+});
