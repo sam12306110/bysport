@@ -1,0 +1,797 @@
+@charset "UTF-8";
+@import url("mem_header_navi_cn.css");
+iframe { border:none;}
+body { font-size:12px;}
+a:link, a:visited {
+  color: #FFF;
+}
+/*back*/
+#sportsbox {  width: 1000px;  margin: 0 auto;  height: 755px;  }
+div#back { width:279px;	position: absolute;float: left;top:1px; margin-left: 700px;font-family: Arial, Helvetica, SimSun, sans-serif;z-index:1000;}
+.bodyset { margin: 0;padding: 0;background: #8A4102 url(../images/header/head_bg_ft.jpg) repeat-x left top; min-height:134px; overflow:hidden;position: relative}
+#OSEL{ float: left; margin: 0;  text-align: center;  padding: 10px 0 0;  background-color: #493721;  width: 240px}
+
+#container { position: relative;font-family: Arial, Helvetica, SimSun, sans-serif;}
+#header {	margin: 0px;	padding: 0px;}
+#header h1 {/*behavior: url(png-opacity.htc);*/	/*background: transparent url(inda_head_l.png) no-repeat left top;margin: 0px;	display: block;	height: 56px;	padding: 0px;*/}
+#header span {	/*background: transparent url(inda_head_r.jpg) no-repeat right top;	display: block;height: 56px;*/}
+ul {	margin: 0;	padding: 0;}
+a { text-decoration: none;}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~ Welcome (Link2) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#welcome {position: absolute; top:27px; margin:0; padding:0; width:980px; color:#FFF; clear:left;}
+#welcome li {list-style: none; float: left; margin-right: 3px; text-align:center;  font-size: 14px; line-height: 34px; padding-top:3px; white-space: nowrap;/*background: url(head_focus_btn_out.gif) no-repeat left top;*/}
+#welcome a {display: block; /*float: left; *//* width: .1em;*/ padding: 0; /*width:130px;*/ font-weight: bold;  color: #E7B565;}
+
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#welcome a {float: none;}            /* End IE5-Mac hack */
+#welcome a:link, #welcome a:visited { color: #E7B565;}
+#welcome a:hover {color: #F8C100;}
+#welcome li.name { display:block; width:240px; margin-right: 0;	height:34px; line-height:16px; font:12px Arial, Helvetica, sans-serif; font-weight:bold; background:none;}
+#welcome .pass { position: absolute; right:0px; padding-top:2px; padding-right:0px; text-align:right;font:12px Arial, Helvetica, sans-serif;}
+#welcome .pass a { font-weight:normal!important; }
+.rb_sum { font:12px  Arial, Helvetica, sans-serif; font-weight:bold;}
+/*�u�y��*//**//**/
+#welcome li.rb {width:107px;background: url(../images/header/head_rb_btn.gif) no-repeat left top;}
+/*#HFT #welcome li.rb .ball {display: block;background: url(head_ball_ft.gif) no-repeat 13px 50%;}
+/*����ñ����*/
+/*~~~~~~~~~~~~~~~~~Notice! Don't delete this note, For IE hack~~~~~~~~~~~~~~~~~*/
+#welcome li.rb_on  { width:107px; color: #F8C100; background: url(../images/header/head_rb_btn.gif) 0 -40px no-repeat;}
+
+#welcome li.rb_on a:link, #welcome li.rb_on a:visited, #welcome li.today_on a:link, #welcome li.today_on a:visited,  #welcome li.early_on a:link, #welcome li.early_on a:visited{ color: #F8C100;}
+#welcome li.live_tv {  margin-left:2px; width:28px; height:29px;/*background: url(../images/header/live_tv_m.gif) 0 0 no-repeat;*/}
+/*~~~~~~~~~~~~~~~~~�L�y��~~~~~~~~~~~~~~~~~*//**/
+#welcome li.rb_null  { width:107px; color: #7D6342; font-weight:bold; background: url(../images/header/head_rb_btn.gif) 0 -80px no-repeat;}
+#welcome li.today_null  { width:128px; color: #7D6342; font-weight:bold;  background: url(../images/header/head_today_btn.gif) 0 -80px no-repeat;}
+#welcome li.early_null { width:114px; color: #7D6342; font-weight:bold;  background: url(../images/header/head_early_btn.gif) 0 -80px no-repeat;}
+#welcome li.rb_null a:link, #welcome li.rb_null a:visited, #welcome li.today_null a:link, #welcome li.today_null a:visited,  #welcome li.early_null a:link, #welcome li.early_null a:visited{ color: #7D6342;}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~Game Type ( link 3) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#nav, #nav_re { font-size:12px; position: absolute; top:61px; margin:0 0 0 240px; padding:0; width:100%; clear:left; background: #D7D7C1 url(../images/header/head_nav_bg_ft.gif) 0 0 repeat-x;border: solid 1px #FFF; white-space: nowrap;z-index:99;}
+#nav li, #nav_re li {list-style: none; float: left; text-align:center;  /*font-size: 0.75em;*/ font-size:12px; line-height: 22px; white-space: nowrap; background:url(../images/header/head_nav_arr.gif) no-repeat 0 50%;}
+#nav a, #nav_re a {display: block; float: left; clear:left;  width: .1em; padding: 4px 10px 4px 32px;  color: #FFF;}
+/**/
+html>body #nav a, html>body #nav_re a {width: auto;}    /* fixes IE6 hack */
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#nav a, #nav_re a {float: none; font-size:12px;}            /* End IE5-Mac hack */
+
+#nav a:link, #nav a:visited, #nav_re a:link, #nav_re a:visited { color: #FFF;}
+#nav a:hover, #nav_re a:hover {color: #FF0;}
+
+#nav ul li.sel a { color: #F9C100; }
+/*======�y��icon================*/
+#nav li.ft, #nav_re li.ft { background: none; margin-left:-4px;}
+#nav li.ft a, #nav_re li.ft a { padding-left:40px; font-size:12px;}
+#nav li.ft .ball, #nav_re li.ft .ball {	background: url(../images/header/head_ball_ft.gif) no-repeat 20px 50%;}
+/**/
+#nav li.bk .ball, #nav_re li.bk .ball {	background: url(../images/header/head_ball_bk.gif) no-repeat 11px 50%;}
+/* ball icon Live 2 */
+#nav li.bk span.ball_nf, #nav_re li.bk span.ball_nf { display:inline-block;vertical-align: text-bottom; margin:0 5px 0 4px; width:16px; height:17px;background: url(../images/header/head_ball_nf.gif) no-repeat 0 0px;}
+#nav li.bk span.ball_rl, #nav_re li.bk span.ball_rl  { display:inline-block;vertical-align: text-bottom; margin:0 4px; width:16px; height:17px;background: url(../images/header/head_ball_rl.gif) no-repeat 0 0px;}
+#nav li.vb span.ball_bad, #nav_re li.vb span.ball_bad { display:inline-block;vertical-align: text-bottom; margin:0 4px; width:15px; height:17px;/*background: url(../images/header/head_ball_bad.gif) no-repeat 0 0px;*/}
+#nav li.vb span.ball_tt, #nav_re li.vb span.ball_tt { display:inline-block;vertical-align: text-bottom; margin:0 4px; width:18px; height:17px;/*background: url(../images/header/head_ball_tt.gif) no-repeat 0 0px;*/}
+
+#nav li.op a, #nav_re li.op a { padding-left:11px;}
+/*#nav li.tn .ball, #nav_re li.tn .ball {	background: url(../images/header/head_ball_tn.gif) no-repeat 11px 50%;}
+#nav li.vb .ball, #nav_re li.vb .ball {	background: url(../images/header/head_ball_vb.gif) no-repeat 10px 50%;}
+#nav li.bs .ball, #nav_re li.bs .ball {	background: url(../images/header/head_ball_bs.gif) no-repeat 10px 50%;}*/
+#nav li .ball, #nav_re li .ball {	display: block;}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~ Type RE (Link4) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*#type_re {position: absolute; top:31px; margin:0 0 0 -1px; padding:0 10px; width:100%; clear:left; background: #260707 url(head_type_bg_ft.gif) 0 0 repeat-x;border-left: solid 1px #FFF; white-space: nowrap;z-index:90;  line-height: 26px;}
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~ Type (Link4) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#type, #type_re {position: absolute; top:93px; margin:0 0 0 240px; padding:0 10px; width:100%; clear:left; background: #260707 url(../images/header/head_type_bg_ft.gif) 0 0 repeat-x;border-left: solid 1px #FFF; white-space: nowrap;z-index:90;}
+#type_re .re { background-image: none;}
+#type li, #type_re li {list-style: none; float: left; text-align:center;  font-size: 12px; line-height: 26px; white-space: nowrap; background:url(../images/header/head_nav_arr.gif) no-repeat 0 50%;}
+#type a, #type_re a {display: block; float: left;  width: .1em; padding: 0px 15px 0px 15px; color: #FFF;}
+html>body #type a, html>body #type_re a {width: auto;}    /* fixes IE6 hack */
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#type a, #type_re a {float: none;}            /* End IE5-Mac hack */
+#type a:link, #type a:visited, #type_re a:link, #type_re a:visited { color: #FFF;}
+#type a:hover, #type_re a:hover {color: #FF0;}
+#type ul, #type_re ul { margin-left:-11px; width:751px;}/*�ɪG�w�� �����h�X�s*/
+#type .result, #type_re .result{ float:right; padding-right:8px; background: none; width:30px; margin-right:10px; display:inline;}/*�ɪG�a�k*/
+#type .reuls, #type_re .reuls{ float:right; padding-right:8px; background: none; width:30px; margin-right:10px; display:inline;}/
+/*----���k����----*//**/
+#type .type_on:link, #type .type_on:visited, #type_re .type_on:link, #type_re .type_on:visited { color: #F9C100;}
+/*----���k�w�]----*//**/
+#type .type_out:link, #type .type_out:visited, #type_re .type_out:link, #type_re .type_out:visited { color: #FFF; font-size:12px;}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~ Game chuang ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*�Ȯɦ@�Ψ��y
+#HFU #type { background-image: url(head_typ_fu.jpg);}
+#HBK #type { background-image: url(head_typ_bk.jpg);}
+#HTN #type { background-image: url(head_typ_tn.jpg);}
+#HTU #type { background-image: url(head_typ_tu.jpg);}
+#HVB #type { background-image: url(head_typ_vb.jpg);}
+html#HVU, body#HVU { background-image: url(head_bg_vu.jpg); }
+#HVU #type { background-image: url(head_typ_vu.jpg);}
+html#HFS, body#HFS { background-image: url(head_bg_fs.jpg); }
+#HFS #type { background-image: url(head_typ_fs.jpg);}
+html#HBU, body#HBU { background-image: url(head_bg_bu.jpg); }
+#HBU #type { background-image: url(head_typ_bu.jpg);}
+html#HBS, body#HBS { background-image: url(head_bg_bs.jpg); }
+#HBS #type { background-image: url(head_typ_bs.jpg);}
+html#HBE, body#HBE { background-image: url(head_bg_be.jpg); }
+#HBE #type { background-image: url(head_typ_be.jpg);}
+html#HOP, body#HOP { background-image: url(head_bg_op.jpg); }
+#HOP #type { background-image: url(head_typ_op.jpg);}
+html#HOM, body#HOM { background-image: url(head_bg_om.jpg); }
+#HOM #type { background-image: url(head_typ_om.jpg);}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~Game Selection (Link3)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+body#HFT li.ft a:link, body#HFT li.ft a:visited,
+body#HFU li.ft a:link, body#HFU li.ft a:visited,
+body#HBK li.bk a:link, body#HBK li.bk a:visited,
+body#HBU li.bk a:link, body#HBU li.bk a:visited, body#HBU #nav li.bu a,
+body#HTN li.tn a:link, body#HTN li.tn a:visited,
+body#HTU li.tn a:link, body#HTU li.tn a:visited, body#HTU #nav li.tu a,
+body#HVB li.vb a:link, body#HVB li.vb a:visited,
+body#HVU li.vb a:link, body#HVU li.vb a:visited, body#HVU #nav li.vu a,
+/*body#HFS li.fs a:link, body#HFS li.fs a:visited,*/
+body#HBS li.bs a:link, body#HBS li.bs a:visited,
+body#HBE li.bs a:link, body#HBE li.bs a:visited, body#HBE #nav li.be a,
+body#HOP li.op a:link, body#HOP li.op a:visited,
+body#HOU li.op a:link, body#HOU li.op a:visited, body#HOU #nav li.op a
+{ color: #F9C100;}
+/*----���k����----*//**/
+.type_on { color: #F9C100;}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~ For Mac/Safari Fix ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*html > body #nav { width: 640px; margin-top: 7px;}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~ Hideaway link ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#extra2 {	display: none;}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Extra link R.B ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*#extra1 {}*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~ Extra link Baccarat ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*#extra2 {	position: absolute;	left: 250px;	top: 2px;width:140px; height:27px; background: url(head_ad_ba.gif) no-repeat 0 0;}
+#extra2 a { display:block; width:140px; height:27px;}*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ �b���O�� ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#mem_box {	clear: both;	position: absolute;	top: 77px;	width:240px;	height: 57px;	padding-top:9px;	text-align:center;	color:#FFF;	border-top: 1px solid #FFF;	background-color:  #493721;	font-family: Arial, Helvetica, sans-serif;}
+#mem_box a:link, #mem_box a:visited { color: #FFF;}
+#mem_box a:hover {color: #F8C100;}
+#mem_box #mem_main .his {	padding-right: 25px;}
+#mem_box #mem_main .wag {	padding-left: 25px;}
+#mem_box #credit_main {	margin-left:50px;text-align: center;	height: 24px;margin-top: 8px;	padding: 0 12px;	line-height: 24px;font-weight: bold;background: url(../images/header/head_credit_icon.gif) no-repeat 12px top;}
+/*#mem_box #credit {	margin-left: 29px;}*/
+#mem_box .re_credit { position: relative; top:4px ;margin: 2px 0 0 10px; height: 16px;	width: 16px;border: none;	*cursor: hand; cursor:pointer;background: url(../images/header/head_credit_refresh.gif) no-repeat 0 0;}
+html>body #mem_box .re_credit /*{ background-image: url(head_credit_refresh.gif);} /*mac hack*/
+/*�ƹL�ܦ�*//**/
+div#mem_box input.re_credit:hover /* {background: url(head_credit_refresh.gif) no-repeat 0 -20px;}*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ���� ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#head_date {	color: #FFF; font-weight:normal;}
+
+/*#head_date {	position: absolute;	top: 37px;	left: 856px;	color: #FFF;font: 0.75em Arial, Helvetica, sans-serif;}*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~ RB Menu ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+div#welcome li.rb, div#welcome li.rb_on { position:relative;}
+div#welcome .level2 a { display:block; float:left; /*padding:5px 4px 5px;*/ height:36px;text-decoration:none;}
+#welcome li.rb_on .level2 a:link, #welcome li.rb_on .level2 a:visited, #welcome ul.level2 a:link, #welcome ul.level2 a:visited  { color: #44321C;}
+
+div#welcome .level2 a:hover {color: #900;}
+div#welcome ul ul li { list-style:none;margin-right: 0px; padding-top:0; background-color:#FEF7E7;}
+div#welcome ul.level1 li.rb:hover ul.level2, div#welcome ul.level1 li.rb_on:hover ul.level2 { display:block; height:36px;}
+div#welcome ul.level2 {position:absolute; height:36px;line-height:36px;width: 800px; top:34px!important;	z-index:1000;	left:0px; font-family:Arial, Helvetica, sans-serif;
+	display:none;
+	visibility: visible;
+}
+html > body div#welcome ul ul { white-space:nowrap;}
+html > body div#welcome ul.level2 {top: -27px;}
+html > body .rb:hover .level2, html > body .rb_on:hover .level2 { display:block;}
+
+#RB_MENU li.rb_bg_right { width:4px; height:36px; margin-left:-1px;/* background:url(head_rb_menu_r.gif) no-repeat 100% 100%;*/}
+#RB_MENU li.rb_bg_left { width:4px; height:36px; /*background:url(head_rb_menu_l.gif) no-repeat 0 100%;*/}
+
+#RB_FT, #RB_BK, #RB_TN, #RB_VB, #RB_BS, #RB_OP {padding:0 10px;/* background:url(head_rb_menu_line.gif) no-repeat 100% 0;*/}
+/* �I���Ӻu�y�� -- �����C�� rb_menu_on */
+#welcome .level2 .rb_menu_on a:link , #welcome .level2 .rb_menu_on a:visited { color:#900!important;}
+/* �I���Ӻu�y�� -- ���L�ƹL�� rb_out */
+#welcome .level2 .rb_out a:hover { color:#900!important;}
+
+
+
+/*2013/07/31 hide */
+/*#type_re .pd, #type_re .to, #type_re .hf { display:none;}*/
+
+
+#topback { width:750px; position: absolute;float: left;top:1px; margin-left: 395px;font-family: Arial, Helvetica, SimSun, sans-serif;z-index:1000;}
+#topback ul {z-index: 990;font-size: 12px;}
+#topback ul li { width:85px;/*change*/  /*需個別設定*/ height:25px;/*change*/ float:left; line-height:25px;/*change*/ position:relative; }
+
+#topback ul li.lang_top {width:85px;/*background:url(head_lang_cn.gif) no-repeat; */text-align:left;}
+#topback ul li.online_pay {width:85px;/*background:url(head_pay.gif) no-repeat; */text-align:center;}
+#topback ul li.mail {width:70px;/*background:url(head_mail.gif) no-repeat;*/text-align:center;}
+#topback ul li.qa {width:70px;/*background:url(head_qa.gif) no-repeat;*/text-align:left;}
+#topback ul li.online_qa {width:90px;/*background:url(head_oqa.gif) no-repeat;*/text-align:center;}
+#topback ul li.home {width:54px;/*background:url(head_home.gif) no-repeat;*/text-align:center;}
+
+#topback ul li a { display:block; height:25px;/*change*/ text-decoration:none; color:#FFF;/*change*/ }
+#topback ul li a:hover { background-position:0 -25px;/*change*//*需個別設定*/color:#303030;/*change*/}
+
+#topback .online_pay a {/*background:url(head_pay.gif) no-repeat; */padding-left:5px;}
+#topback .mail a {/*background:url(head_mail.gif) no-repeat; */padding-top:1px;}
+#topback .qa a {/*background:url(head_qa.gif) no-repeat; */padding-left:24px;}
+#topback .online_qa a {/*background:url(head_oqa.gif) no-repeat;*/ padding-left:5px;}
+#topback .home a {/*background:url(head_home.gif) no-repeat; */padding-top:1px;}
+#topack .online_pay a:hover, #topback .mail a:hover, #topback .online_qa a:hover, #topback .home a:hover {background-position:0 -25px;}
+
+#gms {line-height: 38px;margin:5px 0 0 0;padding: 0;overflow: hidden;}
+#gms li {float:left;width:105px;height: 37px;	margin:5px 0 0 0;background: url(left_li.png) no-repeat 0 0;font-size: 14px; list-style-type:none;}
+#gms li:nth-child(2n){margin:5px 0 0 6px;}
+#gms a:link, #gms a:visited {color: #2F2F2F;text-decoration:none;}
+#gms li a{display:block;text-align: left;}
+#gms li a span{float: left;width:27px;height:27px;margin:5px 5px 5px 5px;background: url(left_icons.png) no-repeat 2px 0;}
+#gms li:hover a span{
+  -webkit-transition: 1s all;
+  -moz-transition: 1s all;
+  -o-transition: 1s all;
+  transition: 1s all;
+  -webkit-transform:rotate(360deg);
+  -moz-transform:rotate(360deg);
+  -o-transform:rotate(360deg);
+  transform:rotate(360deg);
+}
+#gms li.visual a span{background-position:2px 3px;}
+#gms li.egame a span{background-position:2px -25px;}
+#gms li.caipiao a span{background-position:2px -54px;}
+#gms li.kefu a span{background-position:2px -83px;}
+
+#euro_close { margin-top:10px;cursor: hand; cursor:pointer; color:#FFF; width:216px; height:33px; background:url(euro_title_out_tw.gif);}
+#euro_open { margin-top:10px;}
+
+/* title img*/
+#oly_title { width: 216px; height:33px; background:url(oly_title_in.gif) no-repeat;}
+/*��ñ*/
+#euro_menu { width: 216px; height:31px;*padding-bottom: 0px/*IE Hack*/;	}
+/*html>body #euro_menu {height:23px;}/*Mac Hack*/
+/*#euro_menu { *margin-bottom:-33px;}
+
+/*�@�몬�Aout*/
+#euro_menu .rb_btn {
+  cursor: hand;
+  float: left;
+  width:216px;
+  height:31px;
+  background: url(oly_roll_ball_tw.gif) no-repeat 0 0;
+}
+#euro_menu .hot_btn {
+  cursor: hand;
+  float: left;
+  width:72px;
+  height:31px;
+  background: url(oly_hot_game_tw.gif) no-repeat 0 0;
+}
+#euro_menu .early_btn {cursor: hand;float: right;width:72px; height: 31px; background: url(oly_hot_game_early_tw.gif) no-repeat right 0;}
+html>body #euro_menu .rb_btn { padding-top: 12px;height: 19px;}/*Mac Hack*/
+html>body #euro_menu .early_btn { padding-top: 12px;height: 19px;}/*Mac Hack*/
+
+/*over*/
+#euro_menu .rb_over {cursor: hand; float: left;width:216px;height:31px; background: url(../images/header/oly_roll_ball_tw.gif) no-repeat 0 -31px;}
+#euro_menu .hot_over {cursor: hand;float: left;width:72px;height:31px; background: url(../images/header/oly_hot_game_tw.gif) no-repeat right -31px;}
+#euro_menu .early_over {cursor: hand;float: right;width:72px;height:31px; background: url(../images/header/oly_hot_game_early_tw.gif) no-repeat right -31px;}
+
+/*up*/
+#euro_menu .rb_up {cursor: hand; float: left;width:216px; height:31px; background: url(../images/header/oly_roll_ball_tw.gif) no-repeat 0 -62px;}
+#euro_menu .hot_up {cursor: hand;float: right;width:72px;height:31px; background: url(../images/header/oly_hot_game_tw.gif) no-repeat right -62px;}
+#euro_menu .early_up {cursor: hand;float: right;width:72px;height:31px; background: url(../images/header/oly_hot_game_early_tw.gif) no-repeat right -62px;}
+
+/*-------Thie is for IE Hack notes ,Don't delete-----*/
+#euro_menu .hot_up {cursor: hand;	float: left; width: 72px;	height: 31px; background: url(../images/header/oly_hot_game_tw.gif) no-repeat right -62px;}
+#euro_menu .early_up {cursor: hand;float: right;width: 72px;	height: 31px; background: url(../images/header/oly_hot_game_early_tw.gif) no-repeat right -62px;}
+#euro_menu .rb_btn, #euro_menu .early_btn , #euro_menu .hot_up , #euro_menu .early_up, .oly_tr { cursor:pointer;}
+html>body #euro_menu .hot_up { /*padding-top: 10px;*/	height: 31px;}/*Mac Hack*/
+html>body #euro_menu .early_up { /*padding-top: 10px;*/	height: 31px;}/*Mac Hack*/
+
+/*game*/
+.oly_tr { height:30px; line-height:30px; width:216px;  padding-left:44px; padding-top:5px;cursor:hand; text-align:left; border:1px solid #977F62; border-top:none; font:13px  Arial, Helvetica, sans-serif; background-color:#E3CFAA;}
+html>body .oly_tr { clear:both; width:170px; height:23px; padding-top:7px;}
+
+/*FT*/
+div#FT_FT, div#FT_FU, div#FT_RB {background:url(../images/header/oly_tr_ft.gif) repeat-x 0 0;}
+div#FT_FT:hover, div#FT_FU:hover , div#FT_RB:hover{ background:url(../images/header/oly_tr_ft.gif) repeat-x 0 -32px;}
+/*BK*/
+div#BK_FT, div#BK_FU, div#BK_RB {background:url(../images/header/oly_tr_bk.gif) repeat-x 0 0;}
+div#BK_FT:hover, div#BK_FU:hover, div#BK_RB:hover { background:url(../images/header/oly_tr_bk.gif) repeat-x 0 -32px;}
+/*TN*/
+div#TN_FT, div#TN_FU , div#TN_RB{background:url(oly_tr_tn.gif) repeat-x 0 0;}
+div#TN_FT:hover, div#TN_FU:hover, div#TN_RB:hover { background:url(oly_tr_tn.gif) repeat-x 0 -32px;}
+/*VB*/
+div#VB_FT, div#VB_FU, div#VB_RB {background:url(oly_tr_vb.gif) repeat-x 0 0;}
+div#VB_FT:hover, div#VB_FU:hover, div#VB_RB:hover { background:url(oly_tr_vb.gif) repeat-x 0 -32px;}
+/*BS*/
+div#BS_FT, div#BS_FU, div#BS_RB {background:url(oly_tr_bs.gif) repeat-x 0 0;}
+div#BS_FT:hover, div#BS_FU:hover, div#BS_RB:hover { background:url(oly_tr_bs.gif) repeat-x 0 -32px;}
+/*OP*/
+div#OP_FT, div#OP_FU, div#OP_RB {background:url(oly_tr_op.gif) repeat-x 0 0;}
+div#OP_FT:hover, div#OP_FU:hover, div#OP_RB:hover { background:url(oly_tr_op.gif) repeat-x 0 -32px;}
+
+
+#oly_main { position:relative; width:216px;}
+/*#early_oly { position:absolute; top:0; left:0;}*/
+/*html>body #oly_main  { margin-top:32px;}*/
+
+/*140418-�����[benner+�u�y���馭�\btn*/
+.euro_btn { background:url(2014_left_banner.jpg) no-repeat 0 0; width:216px; height:43px; margin-top:5px;}
+.left_btn { font-family:"Arial"; font-size:12px; font-weight:bold; line-height:14px; line-height:18px\9; margin-top:-1px; width:216px; height:28px; cursor:pointer;}
+.rb_left_tw_on { background:url(rb_left_tw.jpg) no-repeat 0 0; width:72px; height:28px; color:#FC0; float:left;}
+.rb_left_tw_out { background:url(rb_left_tw.jpg) no-repeat 0 -28px; width:72px; height:28px; color:#40301C; float:left;}
+.text_s { font-size:10px; line-height:11px; line-height:2px\9;}
+.hot_left_tw_on { background:url(hot_left_tw.jpg) no-repeat 0 0; width:72px; height:28px; color:#FC0; float:left;}
+.hot_left_tw_out { background:url(hot_left_tw.jpg) no-repeat 0 -28px; width:72px; height:28px; color:#40301C; float:left;}
+.early_left_tw_on { background:url(early_left_tw.jpg) no-repeat 0 0; width:72px; height:28px; color:#FC0; float:left;}
+.early_left_tw_out { background:url(early_left_tw.jpg) no-repeat 0 -28px; width:72px; height:28px; color:#40301C; float:left;}
+
+.rb_left_cn_on { background:url(rb_left_cn.jpg) no-repeat 0 0; width:72px; height:28px; color:#FC0; float:left;}
+.rb_left_cn_out { background:url(rb_left_cn.jpg) no-repeat 0 -28px; width:72px; height:28px; color:#40301C; float:left;}
+.hot_left_cn_on { background:url(hot_left_cn.jpg) no-repeat 0 0; width:72px; height:28px; color:#FC0; float:left;}
+.hot_left_cn_out { background:url(hot_left_cn.jpg) no-repeat 0 -28px; width:72px; height:28px; color:#40301C; float:left;}
+.early_left_cn_on { background:url(early_left_cn.jpg) no-repeat 0 0; width:72px; height:28px; color:#FC0; float:left;}
+.early_left_cn_out { background:url(early_left_cn.jpg) no-repeat 0 -28px; width:72px; height:28px; color:#40301C; float:left;}
+
+
+#menu {	width: 216px;	background-color:#FEF6E4;	*padding-bottom: 0/*IE Hack*/;	font-family:  Arial, Helvetica, sans-serif;}
+html>body #menu { height:42px; }/*Mac Hack*/
+
+
+#menu .ord_btn {padding-top: 13px;	cursor: hand;	float: left; width:99px;	height: 32px;color: #E9B567;	font-weight:bold!important; background: url(../images/header/order_ord_btn_out.gif) no-repeat left top;}
+#menu .record_btn {padding-top: 13px;	cursor: hand;float: right;width: 117px;	height: 32px;color: #E9B567; font-weight:bold!important; background: url(../images/header/order_record_btn_out.gif) no-repeat right top;}
+html>body #menu .ord_btn { padding-top: 12px;	height: 30px;}/*Mac Hack*/
+html>body #menu .record_btn { padding-top: 12px;	height: 30px;}/*Mac Hack*/
+#order_div {	clear: both;margin-bottom:0px;width: 216px;}
+/* �U�`�����O�Jbody�]�w *//**/
+.bet_info { margin:0; padding:0; background-color:#E3CFAA!important;left:0;top:0;}
+/*����ñ����*/
+/*-------Thie is for IE Hack notes ,Don't delete-----*/
+#menu .ord_on {padding-top: 11px;	cursor: hand;	float: left; width: 99px;	height: 32px;color: #3B2D1B;	font-weight:bold!important; background: url(../images/header/order_ord_btn_on.gif) no-repeat left top;}
+#menu .record_on {padding-top: 11px;	cursor: hand;float: right;width: 117px;	height: 32px;color: #3B2D1B;font-weight:bold!important; background: url(../images/header/order_record_btn_on.gif) no-repeat right top;}
+#menu .ord_btn, #menu .record_btn , #menu .ord_on , #menu .record_on { cursor:pointer;}
+html>body #menu .ord_on { padding-top: 10px;	height: 32px;}/*Mac Hack*/
+html>body #menu .record_on { padding-top: 10px;	height: 32px;}/*Mac Hack*/
+/*��ñ�ƹL�ܦ�*//**/
+/*div#menu div.ord_btn:hover ,  div#menu div.record_btn:hover  { color:#FF0;} */
+
+/*���i*/
+#bet_div {z-index: 1000;}
+#info_div {/*height:50;*/*left:2; clear: both;}
+
+/*  2012-06-13���B�ק���  */
+#info_div .msg_box { clear:both;color: #FFF;	width: 216px; height:118px;
+  margin-bottom: 5px;
+  margin-left:0px;
+}
+html>body #info_div .msg_box {margin-left:0px;}
+
+/*   2012-06-13���B�ק��e
+#info_div .msg_box {	color: #FFF;	width: 216px; height:118px;
+position: fixed !important;
+bottom: 5px; *bottom:0%;
+_position:absolute;
+left:10px; *left:0px;
+}*/
+#info_div .msg_box h2 {	margin:11px 0 0 0;	padding: 11px 0 0 11px; height: 34px; text-align:left; color:#E9B567; font-size:12px; font-weight:bold;	background: url(../images/header/order_msg_h2.gif) no-repeat left top;}
+#info_div .msg_box h2 .more {	float: right;	*margin-top: -14px/*IE Hack*/;	margin-right: 11px;font-weight:normal;}
+#info_div .msg_box .msg_main { clear:right;	padding: 5px 10px; font-family: Arial, Helvetica, sans-serif; color:#2F2F2F;	background-color: #DFCCA8;}
+html>body #info_div .msg_box .msg_main{ margin-top:-10px; text-align:left;}/*Mac Hack*/
+/*iframe ���Z�]�w*/
+#order_div #bet_div, #order_div #rec5_div {	width: 100%;	display: block; left:0; top:0;}
+#bet_div{background-color: rgb(227,207,170);}
+/*LiveTV*/
+#live_box { margin-top:6px;	color: #FFF;	width: 216px;}
+#live_box h2 {margin: 0px;	padding: 10px 0 0 32px;	height: 34px; text-align:left;font-family: Arial, Helvetica, sans-serif; color:#E9B567; font-weight:bold;	background: url(order_live_h2.gif) no-repeat left top;	 }
+html>body #live_box h2 {margin-bottom:-10px;}/*Mac Hack*/
+#live_box h2 .more {float: right;	*margin-top: -13px/*IE Hack*/;	margin-right: 11px; font-weight:normal;}
+#live_box .live_main { padding-bottom:2px;color:#2F2F2F;	background-color: #DFCCA8;}
+#live_box .live_main ul.live_list{ width:198px; margin:0; padding:0;}
+#live_box .live_main li { margin-bottom:-5px;/*���äU���u*/ padding:6px 0px 3px 0px;	list-style-type: none; border-bottom: 1px dotted #2F2F2F;height: 2em; line-height:2em;font: Arial, Helvetica, sans-serif;  display:block; clear:left;}
+html>body #live_box .live_main li {line-height: 180%; height:inherit;margin-bottom:-1px; padding-bottom:0px;}
+html>body #live_box .live_main ul.live_list {overflow:auto; zoom:1; margin-bottom:2px;}
+#live_box .live_main span {	display: block;}
+#live_box .live_main .time {	float: left;width: 40px;}
+#live_box .live_main .team {float: left;	padding-left: 0px;	text-align: left; display:inline;	}
+html>body #live_box .live_main ul.live_list { padding: 2px 10px 14px;}
+
+/*�p���º���*//**/
+#switch_web { cursor:hand \9; cursor:pointer; width:216px; height:43px; margin:0 0 10px 0; background: url(NewtoOld_chs.gif) no-repeat;}
+/*html>body #switch_web {height:44px; margin-left:-8px;}
+/*#switch_web a:link, #switch_web a:visited {	color: #FFF; text-decoration:none;}
+#switch_web a:hover {	color: #F8C100;}*/
+
+/*20140120-left banner*/
+.left_banner { margin-top:8px; margin-bottom:8px;}
+.banner_tw { background:url(433sitebanner_tw.jpg) no-repeat 0 0; width:215px; height:60px; display:block; cursor:pointer;}
+.banner_cn { background:url(433sitebanner_cn.jpg) no-repeat 0 0; width:215px; height:60px; display:block; cursor:pointer;}
+/*20140122-select����*/
+.main {  width:233px; width:238px\9; height:auto; min-height:530px; padding-left:8px; padding-left:0px\9; overflow:hidden;}
+
+
+div#back ul {z-index:990;
+  font-size:12px;
+}
+
+div#back ul li {
+  width:85px;/*change*/  /*需個別設定*/
+  height:25px;/*change*/
+  float:left;
+  line-height:25px;/*change*/
+  position:relative;
+}
+div#back ul li.lang_top li {height:24px;line-height:24px;}/*子層高度*/
+div#back ul li.qa li {height:23px;line-height:23px;}/*子層高度*/
+div#back ul li.qa_on {background-position:0 -25px;}
+/* ~~~~~~~~~~主圖寬度~~~~~~~~~~ */
+div#back ul li.lang_top {width:85px;background:url(head_lang_cn.gif) no-repeat; text-align:left;}
+div#back ul li.mail {width:70px;background:url(head_mail.gif) no-repeat;text-align:center;}
+div#back ul li.qa {width:70px;background:url(head_qa.gif) no-repeat;text-align:left;}
+div#back ul li.home {width:54px;background:url(head_home.gif) no-repeat;text-align:center;}
+
+div#back a {
+  display:block;
+  height:25px;/*change*/
+  text-decoration:none;
+  color:#FFF;/*change*/
+}
+div#back a:link, div#back a:visited { color:#FFF;}
+
+div#back li.lang_top li a {height:24px;/*子層高度*/}
+div#back li.qa li a {height:23px;/*子層高度*/}
+/*有次層之連結*/
+div#back li.qa a:link {color:#FFF;}
+div#back li.lang_top a:link {color:#FFF;}
+div#back a:hover {
+  background-position:0 -25px;/*change*//*需個別設定*/
+  color:#303030;/*change*/
+}
+/* ~~~~~~~~~~Menu Top img~~~~~~~~~~ */
+div#back .lang_top a:link, div#back .lang_top a:visited { color:#FFF;}
+div#back .lang_top a {background:url(head_lang_cn.gif) no-repeat; padding-left:35px!important;}
+div#back .mail a {background:url(head_mail.gif) no-repeat; padding-top:1px;}
+div#back .qa a {background:url(head_qa.gif) no-repeat; padding-left:24px;}
+div#back .home a {background:url(head_home.gif) no-repeat; padding-top:1px;}
+/*div#back .lang_top a:hover, */div#back .mail a:hover, /*div#back .qa a:hover,*/ div#back .home a:hover
+                                {background-position:0 -25px;}
+
+/*Menu Level2*/
+ul.pd { top:0;}/*change*/
+div#back ul ul.pd {
+  display:none;
+  font-size:100%;
+  padding:0;
+}
+div#back ul li:hover ul.pd {
+  display:block;
+  position:absolute;
+  z-index:10;
+}
+div#back ul ul.pd li {
+  float:none;
+}
+
+/*IE6 Hack*//**/
+div#back ul li a:hover ul.pd {
+  display:block;
+  position:absolute;
+  top:0px;/*change*/
+  z-index:1000; margin-top:0; margin-left:-1px;
+}
+div#back ul li table {
+  border-collapse:collapse;
+  border:none;
+  position:absolute;
+  top:0;
+  left:0;
+}
+
+
+/* 語系下拉圖片設定 */
+div#back ul ul.pd a:link, div#back ul ul.pd a:visited { color:#303030;}
+div#back ul ul.pd a:hover {color:#CC6600; }
+
+div#back ul ul.pd li.vi a:hover {  background-position: 0 -514px;}
+div#back ul ul.pd li.vi a { background: url(head_lang.gif) no-repeat 0 -490px; width:71px; height:24px;}/*該語系使用父層圖*/
+
+div#back ul ul.pd li.cn a:hover {color:#303030; }
+div#back ul ul.pd li.cn a { background: url(head_lang_cn.gif) no-repeat 0 -25px;}/*該語系使用父層圖*/
+/*div#back ul ul.pd li.tw a:hover { color:#CC6600; background-position: -106px 0;}*/
+div#back ul ul.pd li.tw a { background: url(head_lang.gif) no-repeat 0 -70px; width:71px; height:24px;}
+div#back ul ul.pd li.tw a:hover {  background-position: 0 -94px;}
+
+/*div#back ul ul.pd li.cn a { background: url(head_lang.gif) no-repeat; width:71px; height:24px;}
+div#back ul ul.pd li.cn a:hover {  background-position: 0 -24px;}*/
+div#back ul ul.pd li.us a { background: url(head_lang.gif) no-repeat 0 -560px; width:71px; height:24px;}
+div#back ul ul.pd li.us a:hover {  background-position: 0 -584px;}
+/* 幫助下拉圖片設定 */
+div#back ul ul.pd li.qa_on a { width:50px; background: url(head_qa.gif) no-repeat 0 -25px;}/*該語系使用父層圖*/
+div#back ul ul.pd li.msg a { background: url(head_qa_sub.gif) no-repeat;}
+div#back ul ul.pd li.msg a:hover { background-position: 0 -23px;}
+div#back ul ul.pd li.roul a , div#back ul ul.pd li.wap a {background: url(head_qa_sub.gif) no-repeat 0 -70px;}
+div#back ul ul.pd li.roul a:hover , div#back ul ul.pd li.wap a:hover {background-position: 0 -93px;}
+div#back ul ul.pd li.odd a { background: url(head_qa_sub.gif) no-repeat 0 -140px;width:112px; height:24px; padding-left:12px; text-align: left;}
+div#back ul ul.pd li.odd a:hover {  background-position: 0 -164px;}
+/*共同寬度設定*/
+div#back ul ul.pd li.msg a , div#back ul ul.pd li.roul a , div#back ul ul.pd li.wap a
+{ width:112px; height:23px; padding-left:12px; text-align: left;}
+
+
+/*height*/
+.vi { display:none;}
+
+
+
+#data a { font-weight:bold;color:red}
+#box{max-height: 540px;overflow-x: hidden;overflow-y: auto;position: relative;}
+.tbox { width: 738px; /*margin: 5px auto 0*/ background: url(tbox_bottom.gif) no-repeat bottom; padding-bottom: 15px; }
+.tbox_content { background-color: #dbd4b8;  border-left:2px solid #bc9a3f; border-right:2px solid #bc9a3f; padding: 5px; }
+.tbox h1 { font-size: 12px; color: #ffffff; height: 28px; width: 724px; line-height: 28px; background: url(../images/header/mem_h1_ft.gif) no-repeat 0 0; padding-left: 15px; }
+.tbox_content dl { background-color: #86715c; height: 33px; line-height: 33px; color: #FFF; margin:0; width:735px; text-align:left}
+.tbox_content dl dt { float: left; width: 435px; padding-left: 11px; }
+.tbox_content dl dd { float: right; width: 99px; line-height:26px; margin-top:3px; font-weight:normal; background: url(../images/header/mem_league_btn.gif) no-repeat left center; color: #fbce18;margin-right:10px; text-align:center;}
+.tbox_content dl .refresh { background-image: url(../images/header/mem_refresh_btn.gif);width: 64px;padding-left: 0px;margin-right:10px; }
+.tbox .tbox_content dl .refresh a{display:block;padding-left:20px; color: #F9C100;}
+#data { background-color: #C3C3C3; width: 730px; border-collapse:collapse; border: solid 1px #c8c7c7; }
+.roll { color:red; text-align:center; }
+.b_cen { text-align:right; }
+.sportNotice { height:30px; line-height:30px; border-bottom:solid 1px #9ea293; background: url(main_title_bg.png) no-repeat 0px 0px; background-color: #e1e4da; padding-left:10px; }
+.sportNotice marquee { width:650px; float:left; }
+.sportNotice strong { width:30px; float:left; background:url(notice.gif) no-repeat 0px 8px; padding-left:20px; }
+.sportNotice span { width:60px; float:right; padding-left:10px; }
+#data tr th { background-color: #6e7458; border-color:#dcdcdc; font-weight: normal; color: #FFF; padding: 5px; }
+#data tr.datatop th {background-color: #C8A670;border-color: #B9B9A3;font-weight: normal;color: #000;padding: 2px 2px 1px;}
+#data tr td { background-color: #FFF; border:#C3C3C3 1px solid; line-height: 18px; padding:2px; border-collapse:collapse; white-space:nowrap; }
+#data .b_title , #data .b_title2 {     text-align: left;height:20px; line-height:20px; font-size:12px; font-weight: bold; color: #4a3b08; background: url(../images/header/t_ico.gif) no-repeat 10px center; padding-left: 40px; background-color: #fcf9ce; }
+#data .b_title2  { background-image:none;}
+
+.tbox .redcard{float:right;color:red;}
+.sg .all{color:red;}
+.sg .team{font-weight:bold;}
+.tbox .qiu{padding-right:10px;}
+.tbox .time{width:30px;}
+.tbox dl a:link,.tbox dl a:visited { color:#880000; }
+.tbox dl dd a.thickbox { color: #F9C100; font-weight:normal; }
+
+#leagueBox{display:none;}
+#leagueForm li{float:left;width:208px;height:30px;overflow:hidden;list-style:none;text-align:left;}
+#leagueForm .btnBox{border-top:1px dotted #FF0000;clear:both;}
+#leagueForm .btn{ height:30px;width:120px;padding:2px 3px 3px 3px;}
+
+.orderbody { background-color: #493721; }
+#orderBox{padding:0px 3px 5px 3px;line-height:26px; color:#302706; background-color: #E3D0AA; width:210px;min-height:100px; height:auto !important;  height:100px; overflow:hidden !important;
+  overflow:visible;}
+#orderBox .ord{ clear: right;width: 210px;font-size: 12px; color: #2F2F2F; border: 1px solid #937B52; background-color: #E1D6C2;}
+#orderBox .ord p{padding-left:5px;}
+#orderBox em{color:red;}
+#orderBox .tb_confirm{margin:5px 0px; height:26px;}
+.remark { border: 1px solid #937B52; background-color: #E1D6C2; padding-top:5px; padding-left:5px;}
+#orderBox .league{font-size: 12px;line-height: 18px;padding: 0px 8px; border-bottom: none; background: #CFC0A1;}
+.ord  .gametype {height: 17px;padding: 1px 8px 1px;border-left: 1px solid #937B52;border-right: 1px solid #937B52;background-color: #E1D6C2;}
+.ord  .teamName {padding: 4px 8px 3px;border: 1px solid #937B52;border-top: none;background-color: #E1D6C2;}
+.ord  .radio {color: #BA2700;}
+.ord  .team {margin: 3px 0;padding: 3px 8px 2px;text-align: left;border: 2px solid #937B52;background-color: #FFF; font: 12px Arial, Helvetica, SimSun, sans-serif;}
+.ord  .team  em {color: #BB2700;font-style: normal;}
+strong.light {color: #BA2700;}
+strong, b {font-weight: bold;}
+.ord .auto {margin: 3px 0;padding: 0px 8px 0px 4px;text-align: left;border: 1px solid #937B52;background-color: #E1D6C2;font-weight: bold; height:22px; line-height:22px;}
+.ord .betdata {padding: 6px 5px 9px 8px;line-height: 110%;border: 1px solid #937B52;background-color: #E1D6C2;}
+.ord .amount {margin-bottom: 8px;}
+.ord .amount .gold {height: 22px;width: 127px;border: 1px solid #937B52;font-weight: bold;}
+.tb_confirm { margin-top: 0px; text-align: center;}
+.tb_confirm input.no { float:left; cursor: pointer;margin: 0 1px 0 0;width: 85px;height: 26px;border: none;padding-top: 2px;
+  color: #FFF;font-weight: bold;background: #3D3D3D url(order_btn.gif) no-repeat 0 -80px;border-radius: 0;}
+.tb_confirm input.yes { float:left; cursor: pointer;margin: 0;width: 122px;height: 26px;border: none;padding-top: 2px;color: #F8C100;font-weight: bold;
+  background: #3D3D3D url(order_btn.gif) no-repeat 0 0;border-radius: 0;}
+
+
+
+#orderBox h6 { color:#9E2C1C; font-size:12px;}
+#orderBox li{line-height:20px;background-color:#8B9778;margin-top:1px;list-style:none;}
+#orderBox li .type{ color:#4a3b08;padding-left:2px;font-weight:bold;}
+#orderBox li .content{background-color:#FFF;padding-left:5px;border: 1px solid #8B9778;}
+#orderBox li .content li{background-color:#FFF;border:none;}
+#orderForm h6{ margin: 0;padding-left: 5px;color: #2F2F2F;height: 22px; line-height:22px; background: #F1E3C6 url(order_h1_ft.jpg) repeat-x left top; position:relative; }
+.tiTimerd { padding-left:15px; height: 22px; background: url(order_btn.gif) no-repeat 0 -122px; cursor: pointer; position: absolute; right: 5px; top: 2px; }
+
+#orderForm ul{margin-bottom:2px;line-height:20px;padding:1px;font-weight:bold;color:#2F2F2F;list-style:none; background: #CFC0A1; border: 1px solid #937B52;}
+#orderForm .cancel{ float:right;margin-right:5px;}
+#orderForm ul li{ font-weight:normal;padding-left:5px;background-color:#FFF;}
+#orderForm .odds,.rate{color:#ff0000;}
+#TB_window{top:270px;}
+.bf{background:url(../images/header/mem_rb_bg.gif) no-repeat;width:70px;height:40px;color:#F8C100;text-align:center;}
+.bf span{color:#AF5F27}
+.clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0}
+.clearfloat{zoom:1}
+.tb_message{padding:5px;color:red;font-size:14px; background:#f1e2c5;}
+.tb_message ul li{padding:10px;}
+.notice{background-color:#EFEFEF;padding:5px;color:#000;}
+.notice .orderId{ color:red;padding-top:10px;}
+/*result*/
+.result{ width:98%;margin:0 auto;}
+.result .league{line-height: 20px; font-size:14px;padding-left:5px;background-color:#fcf9ce;}
+.result td{border-color:#C3C3C3; line-height: 20px; padding:3px 2px;}
+/*notice*/
+.notice .title{ padding:3px 10px; }
+.notice table{width:98%;margin:0 auto;}
+.notice tr th { background-color: #6e7458; border-color:#dcdcdc; font-weight: normal; color: #FFF; padding: 5px; }
+.notice tr td{border-color:#C3C3C3; line-height: 20px; padding:3px 2px;}
+/*add*/
+/*.tb_confirm .yes { width:80px; height:26px;}
+.tb_confirm .no { vertical-align:bottom; margin-bottom:2px;}*/
+
+
+#sportwrapbox { /*float:left;*/ width:738px;/* max-height:540px; */overflow:hidden; margin-left:3px; margin-top:-7px; display:block; position:relative;}
+.sporttop {text-align: left; margin:0; height:28px; line-height:28px; background: #4E432A url(mem_h1_ft.gif) no-repeat 100% 0; padding-right:15px;}
+#data tr td.b_1st { background-color: #f0f1b5;text-align: center;}
+.refresh_M_btn, .refresh_M_on {width: 100px;height: 45px;line-height: 45px;cursor: pointer;padding: 12px 0 0 11px;
+  font: normal 0.75em Arial, Helvetica, sans-serif;white-space: nowrap;}
+
+.refresh_M_btn {color: #F8C100;background: url(../images/header/mem_refresh_M_btn.gif) no-repeat; font-size:14px;}
+.refresh_M_on {color: #FF0;background:url(../images/header/mem_refresh_M_on.gif) no-repeat; font-size:14px;}
+#refresh_down { margin:10px auto;}
+#refresh_right { }
+
+#orderBox .title { margin: 0;  padding-right: 5px; color: #2F2F2F; height: 22px; background: #F1E3C6 url(order_h1_ft.jpg) repeat-x left top; position:relative;}
+#orderBox .title h1 { padding: 0px 48px 2px 8px; height: 20px; width: 100%; font-size: 12px; font-weight: bold;     word-break: break-all; }
+.tiTimer { width:21px; height:22px; background: url(order_btn.gif) no-repeat 0 -122px; cursor:pointer; position:absolute; right:5px; top:2px; }
+
+#TB_window {
+  font: 12px Arial, Helvetica, sans-serif;
+  color: #333333;
+}
+
+#TB_secondLine {
+  font: 10px Arial, Helvetica, sans-serif;
+  color:#666666;
+}
+
+#TB_window a:link {color: #666666;}
+#TB_window a:visited {color: #666666;}
+#TB_window a:hover {color: #000;}
+#TB_window a:active {color: #666666;}
+#TB_window a:focus{color: #666666;}
+
+/* ----------------------------------------------------------------------------------------------------------------*/
+/* ---------->>> thickbox settings <<<-----------------------------------------------------------------------------*/
+/* ----------------------------------------------------------------------------------------------------------------*/
+#TB_overlay {
+  position: fixed;
+  z-index:100;
+  top: 0px;
+  left: 0px;
+  height:100%;
+  display: none;
+  width:100%;
+}
+
+.TB_overlayMacFFBGHack {background: url(macFFBgHack.png) repeat;}
+.TB_overlayBG {
+  background-color:#000;
+  filter:alpha(opacity=50);
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+}
+
+* html #TB_overlay { /* ie6 hack */
+  position: absolute;
+  height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
+}
+
+#TB_window {
+  position: fixed;
+  background: #ffffff;
+  z-index: 102;
+  color:#000000;
+  display:none;
+  border: 1px solid #525252;
+  text-align:left;
+  top:38%;
+  left:35%;
+  -webkit-overflow-scrolling:touch;overflow:auto;
+}
+
+* html #TB_window { /* ie6 hack */
+  position: absolute;
+  margin-top: expression(0 - parseInt(this.offsetHeight / 2) + (TBWindowMargin = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop) + 'px');
+}
+
+#TB_window img#TB_Image {
+  display:block;
+  margin: 15px 0 0 15px;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #666;
+  border-left: 1px solid #666;
+}
+
+#TB_caption{
+  height:25px;
+  padding:7px 30px 10px 25px;
+  float:left;
+}
+
+#TB_closeWindow{
+  height:25px;
+  padding:11px 25px 10px 0;
+  float:right;
+}
+
+#TB_closeAjaxWindow{
+  padding-right:10px;
+  margin-bottom:1px;
+  text-align:right;
+  float:right;
+}
+
+#TB_ajaxWindowTitle{
+  float:left;
+  padding:7px 0 5px 10px;
+  margin-bottom:1px;
+}
+
+#TB_title{
+  background-color:#e8e8e8;
+  height:27px;
+}
+
+#TB_ajaxContent{
+  clear:both;
+  padding:2px 15px 15px 15px;
+  overflow:auto;
+  text-align:left;
+  line-height:1.4em;
+}
+
+#TB_ajaxContent.TB_modal{
+  padding:15px;
+}
+
+#TB_ajaxContent p{
+  padding:5px 0px 5px 0px;
+}
+
+#TB_load{
+  position: fixed;
+  display:none;
+  height:13px;
+  width:208px;
+  z-index:103;
+  top: 50%;
+  left: 50%;
+  margin: -6px 0 0 -104px; /* -height/2 0 0 -width/2 */
+}
+
+* html #TB_load { /* ie6 hack */
+  position: absolute;
+  margin-top: expression(0 - parseInt(this.offsetHeight / 2) + (TBWindowMargin = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop) + 'px');
+}
+
+#TB_HideSelect{
+  z-index:99;
+  position:fixed;
+  top: 0;
+  left: 0;
+  background-color:#fff;
+  border:none;
+  filter:alpha(opacity=0);
+  -moz-opacity: 0;
+  opacity: 0;
+  height:100%;
+  width:100%;
+}
+
+* html #TB_HideSelect { /* ie6 hack */
+  position: absolute;
+  height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
+}
+
+#TB_iframeContent{
+  clear:both;
+  border:none;
+  margin-bottom:-1px;
+  margin-top:1px;
+  _margin-bottom:1px;
+}
+#stf tbody tr td,#wave tbody tr td { border-left: none;border-bottom: none}
+#stf tbody tr:nth-child(3) td{border-bottom: 1px solid #C3C3C3}
+#totalGoal tr td{ border-left: none;}
+#wave tbody tr:nth-child(2) td{border-top:none;border-bottom: 1px solid #C3C3C3}
+#wave tbody tr:first-child td{border-bottom: 1px solid #C3C3C3}
+
+
