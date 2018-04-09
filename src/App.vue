@@ -294,7 +294,7 @@
             </li>
           </ul>
           <!--公告 Start-->
-             <div id="info_div" name="info_div" style="top: 241px;">
+             <div id="info_div" style="top: 241px;">
             <div class="msg_box">
               <h2>
                 公告
