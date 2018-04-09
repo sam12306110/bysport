@@ -14,33 +14,67 @@ let MyMixin = {
   },
   computed:{
   },
-  watch:{
-    betMoney(newVal){
-      let user_money= $('#user_money').html();
-      if(newVal>user_money){
-        alert('您的账户余额不足');
-        this.betMoney='';
-      }else{
-        let bet_money=parseFloat(newVal);
-        user_money=parseFloat(user_money.replace("RMB"," "));
-        if(newVal>0&&newVal<=user_money){
-          let temp_point=parseFloat($("input[name='bet_point[]']").val())+parseInt($("input[name='ben_add[]']").val(),10);
-          let win=(bet_money*temp_point).toFixed(2);
-                $("#win_span").html(win);
-                $("#win_span1").html(win);
-                $("#bet_win").val(win);
-        }
-      }
 
-
-    }
-  },
   mounted:function () {
     // _self.showModel();
     // this.getBalance()
   } ,
   methods:{
-
+    getData: function (data, page) {
+      let _self = this;
+      let cPage = 0;
+      let sData = '';
+      if (page) {
+        cPage = page
+      }
+      if (data) {
+        sData = data
+      }
+      _self.animation = true;
+      axios.get(_self.action, {
+        params: {
+          leaguename: sData,
+          CurrPage: cPage,
+        }
+      }).then(function (res) {
+        let resData = res;
+        if (resData.status===200) {
+          _self.animation = false;
+          if (resData.data.db) {
+            _self.source = resData.data.db;
+            let name = _self.source[0].Match_Name;
+            let arr = [];
+            let obj = {};
+            for (let i = 0, source = _self.source.length; i < source; i++) {
+              if (name === _self.source[i].Match_Name) {
+                arr.push(_self.source[i]);
+              }
+              else {
+                arr = [];
+                arr.push(_self.source[i]);
+                name = _self.source[i].Match_Name;
+              }
+              obj[name] = arr;
+            }
+            _self.race = obj;
+            _self.window_lsm = resData.data.lsm.split('|');
+            let pages = resData.data.fy.p_page;
+            if (_self.soPage.length === 0) {
+              for (let l = 0; l < pages; l++) {
+                _self.soPage.push(l)
+              }
+            } else {
+              _self.soPage = [];
+              for (let ls = 0; ls < pages; ls++) {
+                _self.soPage.push(ls)
+              }
+            }
+          }
+        }
+      }).catch(function (err) {
+        throw err
+      })
+    },
     CurentTime :function() {
           let now = new Date();
           let year = now.getFullYear();       //年

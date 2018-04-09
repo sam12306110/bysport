@@ -5,7 +5,7 @@
           <div id="container">
           <div id="header">
                <span>
-                 <h1>&nbsp;</h1>
+
                </span>
           </div>
           <div id="welcome">
@@ -354,42 +354,14 @@ export default {
     $router.push('/')
   },
   mounted: function () {
-     $('.level1').on('click','a',function () {
-       let _self=$(this);
-      _self.parent('li').addClass('rb_on').siblings('li').removeClass('rb_on');
-       if(_self.html()==='滚球'){
-          $('#tshow4').show().siblings('ul').hide();
-            $router.push('rollBall')
-       }else{
-          $('#tshow3').show().siblings('ul').hide();
-            $router.push('/')
-       }
-    })
+
   },
   methods: {
-        showRB:function (type) {
-           $('#rb_btn').addClass('rb_on').siblings('li').removeClass('rb_on');
-           $('#tshow4').show().siblings('ul').hide();
-           if(type==="FT"){
-             $('#navli3').addClass('sel').siblings('li').removeClass('sel');
-             $router.push('rollBall')
-           }
-           if(type==="BK"){
-             $('#navli6').addClass('sel').siblings('li').removeClass('sel');
-             $router.push('basketRollBall')
-           }
-        },
+
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
