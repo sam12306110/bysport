@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("mem_header_navi_cn.css");
+
 iframe { border:none;}
 body { font-size:12px;}
 a:link, a:visited {
@@ -18,7 +18,7 @@ div#back { width:279px;	position: absolute;float: left;top:1px; margin-left: 700
 ul {	margin: 0;	padding: 0;}
 a { text-decoration: none;}
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~ Welcome (Link2) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-#welcome {position: absolute; top:27px; margin:0; padding:0; width:980px; color:#FFF; clear:left;}
+#welcome {position: absolute; top:43px; margin:0; padding:0; width:980px; color:#FFF; clear:left;}
 #welcome li {list-style: none; float: left; margin-right: 3px; text-align:center;  font-size: 14px; line-height: 34px; padding-top:3px; white-space: nowrap;/*background: url(head_focus_btn_out.gif) no-repeat left top;*/}
 #welcome a {display: block; /*float: left; *//* width: .1em;*/ padding: 0; /*width:130px;*/ font-weight: bold;  color: #E7B565;}
 
@@ -45,7 +45,7 @@ a { text-decoration: none;}
 #welcome li.early_null { width:114px; color: #7D6342; font-weight:bold;  background: url(../images/header/head_early_btn.gif) 0 -80px no-repeat;}
 #welcome li.rb_null a:link, #welcome li.rb_null a:visited, #welcome li.today_null a:link, #welcome li.today_null a:visited,  #welcome li.early_null a:link, #welcome li.early_null a:visited{ color: #7D6342;}
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~Game Type ( link 3) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-#nav, #nav_re { font-size:12px; position: absolute; top:61px; margin:0 0 0 240px; padding:0; width:100%; clear:left; background: #D7D7C1 url(../images/header/head_nav_bg_ft.gif) 0 0 repeat-x;border: solid 1px #FFF; white-space: nowrap;z-index:99;}
+#nav, #nav_re { font-size:12px; position: absolute; top:77px; margin:0 0 0 240px; padding:0; width:100%; clear:left; background: #D7D7C1 url(../images/header/head_nav_bg_ft.gif) 0 0 repeat-x;border: solid 1px #FFF; white-space: nowrap;z-index:99;}
 #nav li, #nav_re li {list-style: none; float: left; text-align:center;  /*font-size: 0.75em;*/ font-size:12px; line-height: 22px; white-space: nowrap; background:url(../images/header/head_nav_arr.gif) no-repeat 0 50%;}
 #nav a, #nav_re a {display: block; float: left; clear:left;  width: .1em; padding: 4px 10px 4px 32px;  color: #FFF;}
 /**/
@@ -80,7 +80,7 @@ html>body #nav a, html>body #nav_re a {width: auto;}    /* fixes IE6 hack */
 
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~ Type (Link4) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-#type, #type_re {position: absolute; top:93px; margin:0 0 0 240px; padding:0 10px; width:100%; clear:left; background: #260707 url(../images/header/head_type_bg_ft.gif) 0 0 repeat-x;border-left: solid 1px #FFF; white-space: nowrap;z-index:90;}
+#type, #type_re {position: absolute; top:109px; margin:0 0 0 240px; padding:0 10px; width:100%; clear:left; background: #260707 url(../images/header/head_type_bg_ft.gif) 0 0 repeat-x;border-left: solid 1px #FFF; white-space: nowrap;z-index:90;}
 #type_re .re { background-image: none;}
 #type li, #type_re li {list-style: none; float: left; text-align:center;  font-size: 12px; line-height: 26px; white-space: nowrap; background:url(../images/header/head_nav_arr.gif) no-repeat 0 50%;}
 #type a, #type_re a {display: block; float: left;  width: .1em; padding: 0px 15px 0px 15px; color: #FFF;}
@@ -98,26 +98,6 @@ html>body #type a, html>body #type_re a {width: auto;}    /* fixes IE6 hack */
 #type .type_out:link, #type .type_out:visited, #type_re .type_out:link, #type_re .type_out:visited { color: #FFF; font-size:12px;}
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~ Game chuang ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*�Ȯɦ@�Ψ��y
-#HFU #type { background-image: url(head_typ_fu.jpg);}
-#HBK #type { background-image: url(head_typ_bk.jpg);}
-#HTN #type { background-image: url(head_typ_tn.jpg);}
-#HTU #type { background-image: url(head_typ_tu.jpg);}
-#HVB #type { background-image: url(head_typ_vb.jpg);}
-html#HVU, body#HVU { background-image: url(head_bg_vu.jpg); }
-#HVU #type { background-image: url(head_typ_vu.jpg);}
-html#HFS, body#HFS { background-image: url(head_bg_fs.jpg); }
-#HFS #type { background-image: url(head_typ_fs.jpg);}
-html#HBU, body#HBU { background-image: url(head_bg_bu.jpg); }
-#HBU #type { background-image: url(head_typ_bu.jpg);}
-html#HBS, body#HBS { background-image: url(head_bg_bs.jpg); }
-#HBS #type { background-image: url(head_typ_bs.jpg);}
-html#HBE, body#HBE { background-image: url(head_bg_be.jpg); }
-#HBE #type { background-image: url(head_typ_be.jpg);}
-html#HOP, body#HOP { background-image: url(head_bg_op.jpg); }
-#HOP #type { background-image: url(head_typ_op.jpg);}
-html#HOM, body#HOM { background-image: url(head_bg_om.jpg); }
-#HOM #type { background-image: url(head_typ_om.jpg);}
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~Game Selection (Link3)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 body#HFT li.ft a:link, body#HFT li.ft a:visited,
@@ -625,6 +605,7 @@ strong, b {font-weight: bold;}
 .refresh_M_btn {color: #F8C100;background: url(../images/header/mem_refresh_M_btn.gif) no-repeat; font-size:14px;}
 .refresh_M_on {color: #FF0;background:url(../images/header/mem_refresh_M_on.gif) no-repeat; font-size:14px;}
 #refresh_down { margin:10px auto;}
+#refresh_down span{margin-left: 33px;}
 #refresh_right { }
 
 #orderBox .title { margin: 0;  padding-right: 5px; color: #2F2F2F; height: 22px; background: #F1E3C6 url(order_h1_ft.jpg) repeat-x left top; position:relative;}
@@ -684,12 +665,7 @@ strong, b {font-weight: bold;}
   top:38%;
   left:35%;
   -webkit-overflow-scrolling:touch;overflow:auto;
-}
 
-* html #TB_window { /* ie6 hack */
-  position: absolute;
-  margin-top: expression(0 - parseInt(this.offsetHeight / 2) + (TBWindowMargin = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop) + 'px');
-}
 
 #TB_window img#TB_Image {
   display:block;
@@ -757,10 +733,6 @@ strong, b {font-weight: bold;}
   margin: -6px 0 0 -104px; /* -height/2 0 0 -width/2 */
 }
 
-* html #TB_load { /* ie6 hack */
-  position: absolute;
-  margin-top: expression(0 - parseInt(this.offsetHeight / 2) + (TBWindowMargin = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop) + 'px');
-}
 
 #TB_HideSelect{
   z-index:99;
@@ -776,10 +748,7 @@ strong, b {font-weight: bold;}
   width:100%;
 }
 
-* html #TB_HideSelect { /* ie6 hack */
-  position: absolute;
-  height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
-}
+
 
 #TB_iframeContent{
   clear:both;
