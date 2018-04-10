@@ -463,33 +463,33 @@ div#back ul li table {
 
 
 /* 語系下拉圖片設定 */
-div#back ul ul.pd a:link, div#back ul ul.pd a:visited { color:#303030;}
-div#back ul ul.pd a:hover {color:#CC6600; }
+/*div#back ul ul.pd a:link, div#back ul ul.pd a:visited { color:#303030;}*/
+/*div#back ul ul.pd a:hover {color:#CC6600; }*/
 
-div#back ul ul.pd li.vi a:hover {  background-position: 0 -514px;}
-div#back ul ul.pd li.vi a { background: url(head_lang.gif) no-repeat 0 -490px; width:71px; height:24px;}/*該語系使用父層圖*/
+/*div#back ul ul.pd li.vi a:hover {  background-position: 0 -514px;}*/
+/*div#back ul ul.pd li.vi a { background: url(head_lang.gif) no-repeat 0 -490px; width:71px; height:24px;}!*該語系使用父層圖*!*/
 
-div#back ul ul.pd li.cn a:hover {color:#303030; }
-div#back ul ul.pd li.cn a { background: url(head_lang_cn.gif) no-repeat 0 -25px;}/*該語系使用父層圖*/
-/*div#back ul ul.pd li.tw a:hover { color:#CC6600; background-position: -106px 0;}*/
-div#back ul ul.pd li.tw a { background: url(head_lang.gif) no-repeat 0 -70px; width:71px; height:24px;}
-div#back ul ul.pd li.tw a:hover {  background-position: 0 -94px;}
+/*div#back ul ul.pd li.cn a:hover {color:#303030; }*/
+/*div#back ul ul.pd li.cn a { background: url(head_lang_cn.gif) no-repeat 0 -25px;}!*該語系使用父層圖*!*/
+/*!*div#back ul ul.pd li.tw a:hover { color:#CC6600; background-position: -106px 0;}*!*/
+/*div#back ul ul.pd li.tw a { background: url(head_lang.gif) no-repeat 0 -70px; width:71px; height:24px;}*/
+/*div#back ul ul.pd li.tw a:hover {  background-position: 0 -94px;}*/
 
-/*div#back ul ul.pd li.cn a { background: url(head_lang.gif) no-repeat; width:71px; height:24px;}
-div#back ul ul.pd li.cn a:hover {  background-position: 0 -24px;}*/
-div#back ul ul.pd li.us a { background: url(head_lang.gif) no-repeat 0 -560px; width:71px; height:24px;}
-div#back ul ul.pd li.us a:hover {  background-position: 0 -584px;}
-/* 幫助下拉圖片設定 */
-div#back ul ul.pd li.qa_on a { width:50px; background: url(head_qa.gif) no-repeat 0 -25px;}/*該語系使用父層圖*/
-div#back ul ul.pd li.msg a { background: url(head_qa_sub.gif) no-repeat;}
-div#back ul ul.pd li.msg a:hover { background-position: 0 -23px;}
-div#back ul ul.pd li.roul a , div#back ul ul.pd li.wap a {background: url(head_qa_sub.gif) no-repeat 0 -70px;}
-div#back ul ul.pd li.roul a:hover , div#back ul ul.pd li.wap a:hover {background-position: 0 -93px;}
-div#back ul ul.pd li.odd a { background: url(head_qa_sub.gif) no-repeat 0 -140px;width:112px; height:24px; padding-left:12px; text-align: left;}
-div#back ul ul.pd li.odd a:hover {  background-position: 0 -164px;}
-/*共同寬度設定*/
-div#back ul ul.pd li.msg a , div#back ul ul.pd li.roul a , div#back ul ul.pd li.wap a
-{ width:112px; height:23px; padding-left:12px; text-align: left;}
+/*!*div#back ul ul.pd li.cn a { background: url(head_lang.gif) no-repeat; width:71px; height:24px;}*/
+/*div#back ul ul.pd li.cn a:hover {  background-position: 0 -24px;}*!*/
+/*div#back ul ul.pd li.us a { background: url(head_lang.gif) no-repeat 0 -560px; width:71px; height:24px;}*/
+/*div#back ul ul.pd li.us a:hover {  background-position: 0 -584px;}*/
+/*!* 幫助下拉圖片設定 *!*/
+/*div#back ul ul.pd li.qa_on a { width:50px; background: url(head_qa.gif) no-repeat 0 -25px;}!*該語系使用父層圖*!*/
+/*div#back ul ul.pd li.msg a { background: url(head_qa_sub.gif) no-repeat;}*/
+/*div#back ul ul.pd li.msg a:hover { background-position: 0 -23px;}*/
+/*div#back ul ul.pd li.roul a , div#back ul ul.pd li.wap a {background: url(head_qa_sub.gif) no-repeat 0 -70px;}*/
+/*div#back ul ul.pd li.roul a:hover , div#back ul ul.pd li.wap a:hover {background-position: 0 -93px;}*/
+/*div#back ul ul.pd li.odd a { background: url(head_qa_sub.gif) no-repeat 0 -140px;width:112px; height:24px; padding-left:12px; text-align: left;}*/
+/*div#back ul ul.pd li.odd a:hover {  background-position: 0 -164px;}*/
+/*!*共同寬度設定*!*/
+/*div#back ul ul.pd li.msg a , div#back ul ul.pd li.roul a , div#back ul ul.pd li.wap a*/
+/*{ width:112px; height:23px; padding-left:12px; text-align: left;}*/
 
 
 /*height*/
@@ -530,8 +530,8 @@ div#back ul ul.pd li.msg a , div#back ul ul.pd li.roul a , div#back ul ul.pd li.
 
 #leagueBox{display:none;}
 #leagueForm li{float:left;width:208px;height:30px;overflow:hidden;list-style:none;text-align:left;}
-#leagueForm .btnBox{border-top:1px dotted #FF0000;clear:both;}
-#leagueForm .btn{ height:30px;width:120px;padding:2px 3px 3px 3px;}
+#TB_ajaxContent .btnBox{border-top:1px dotted #FF0000;clear:both;}
+#TB_ajaxContent .btn{ height:30px;width:120px;padding:2px 3px 3px 3px;}
 
 .orderbody { background-color: #493721; }
 #orderBox{padding:0px 3px 5px 3px;line-height:26px; color:#302706; background-color: #E3D0AA; width:210px;min-height:100px; height:auto !important;  height:100px; overflow:hidden !important;
@@ -634,10 +634,10 @@ strong, b {font-weight: bold;}
 #TB_overlay {
   position: fixed;
   z-index:100;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   height:100%;
-  display: none;
+  display: block;
   width:100%;
 }
 
@@ -658,14 +658,14 @@ strong, b {font-weight: bold;}
   position: fixed;
   background: #ffffff;
   z-index: 102;
-  color:#000000;
-  display:none;
+  color: #000000;
+  display:block;
   border: 1px solid #525252;
-  text-align:left;
-  top:38%;
-  left:35%;
-  -webkit-overflow-scrolling:touch;overflow:auto;
-
+  text-align: left;
+  top: 15%;
+  left: 35%;
+}
+#TB_window li{float:left;width:208px;height:30px;overflow:hidden;list-style:none;text-align:left;}
 
 #TB_window img#TB_Image {
   display:block;

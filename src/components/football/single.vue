@@ -110,7 +110,7 @@
             </table>
           </div>
         </div>
-        <div id="refresh_down" class="refresh_M_btn" onclick="this.className='refresh_M_on';javascript:refload();">
+        <div id="refresh_down" class="refresh_M_btn">
           <span>刷新</span>
         </div>
       </div>
@@ -132,15 +132,14 @@
             return {
                 action: '../api/app/member/show/json/ft_2_1.php',
                 showType: '早餐',
-                time: 121,
                 pageInfo:{
                 total:100,  // 记录总条数   默认空，如果小于pageNum则组件不显示   类型Number
                 current:1,  // 当前页数，   默认为1                             类型Number
                 pagenum:10, // 每页显示条数,默认10                              类型Number
                 pagegroup:5,    // 分页条数     默认为5，需传入奇数                 类型Number
-                skin:'#86715'  // 选中页码的颜色主题 默认为'#16a086'               类型String
+                skin:'#86715' , // 选中页码的颜色主题 默认为'#16a086'               类型String
               },
-                showBg:true
+
             }
         },
         created: function () {
@@ -157,11 +156,12 @@
              showMod:function (type) {
                if(type==='op'){
 //                  console.log('mmp')
-                  this.showBg=false
+                  this.showBg=true
+
                 // $('#TB_overlay').show();
                 // $('#TB_window').show()
                 }else {
-                  this.showBg=true
+                  this.showBg=false
                   // this.showType=false;
                  // $('#TB_overlay').hide();
                // $('#TB_window').hide()

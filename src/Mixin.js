@@ -10,6 +10,7 @@ let MyMixin = {
             pageData:'',
             betMoney:'',
             userMoney:'',
+            showBg:false
             }
   },
   computed:{
