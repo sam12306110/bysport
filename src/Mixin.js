@@ -1,28 +1,26 @@
 let MyMixin = {
-  data:function(){
+  data: function () {
     return {
-            source:[],
-            race:{},
-            soPage:'',
-            dataType:1,
-            windowLsm:'',
-            pageData:'',
-            betMoney:'',
-            userMoney:'',
-            modelData: {
+      source: [],
+      race: {},
+      soPage: '',
+      dataType: 1,
+      windowLsm: '',
+      pageData: '',
+      betMoney: '',
+      userMoney: '',
+      modelData: {
         showBg: false,
         selectData: '',
       },
-            }
+    }
   },
-  computed:{
-  },
+  computed: {},
 
-  mounted:function () {
-    // _self.showModel();
-    // this.getBalance()
-  } ,
-  methods:{
+  mounted: function () {
+
+  },
+  methods: {
     getData: function (data, page) {
       let _self = this;
       let cPage = 0;
@@ -41,7 +39,7 @@ let MyMixin = {
         }
       }).then(function (res) {
         let resData = res;
-        if (resData.status===200) {
+        if (resData.status === 200) {
           _self.animation = false;
           if (resData.data.db) {
             _self.source = resData.data.db;
@@ -62,55 +60,46 @@ let MyMixin = {
             _self.race = obj;
             _self.windowLsm = resData.data.lsm.split('|');
             _self.soPage = resData.data.fy.p_page;
-            // if (_self.soPage.length === 0) {
-            //   for (let l = 0; l < pages; l++) {
-            //     _self.soPage.push(l)
-            //   }
-            // } else {
-            //   _self.soPage = [];
-            //   for (let ls = 0; ls < pages; ls++) {
-            //     _self.soPage.push(ls)
-            //   }
-            // }
+
           }
         }
       }).catch(function (err) {
         throw err
       })
     },
-    CurentTime :function() {
-          let now = new Date();
-          let year = now.getFullYear();       //年
-          let month = now.getMonth() + 1;     //月
-          let day = now.getDate();            //日
+    CurentTime: function () {
+      let now = new Date();
+      let year = now.getFullYear();       //年
+      let month = now.getMonth() + 1;     //月
+      let day = now.getDate();            //日
 
-          let hh = now.getHours();            //时
-          let mm = now.getMinutes();          //分
-          let ss = now.getSeconds();           //秒
+      let hh = now.getHours();            //时
+      let mm = now.getMinutes();          //分
+      let ss = now.getSeconds();           //秒
 
-          let clock = year + "年";
+      let clock = year + "年";
 
-           if(month < 10)
-              clock += "0";
+      if (month < 10)
+        clock += "0";
 
-              clock += month + "月";
+      clock += month + "月";
 
-              if(day < 10)
-              clock += "0";
+      if (day < 10)
+        clock += "0";
 
-              clock += day + "日 ";
+      clock += day + "日 ";
 
-              if(hh < 10)
-              clock += "0";
+      if (hh < 10)
+        clock += "0";
 
-              clock += hh + ":";
-              if (mm < 10) clock += '0';
-              clock += mm + ":";
+      clock += hh + ":";
+      if (mm < 10) clock += '0';
+      clock += mm + ":";
 
-              if (ss < 10) clock += '0';
-              clock += ss;
-              return  clock;
-},
+      if (ss < 10) clock += '0';
+      clock += ss;
+      return clock;
+    },
     timer: function (date) {
       return setInterval(() => {
         let _self = this;
@@ -157,6 +146,7 @@ let MyMixin = {
     comShowModel: function (type) {
       if (type === 'op') {
         this.modelData.showBg = true;
+        console.log(this.modelData.showBg)
       }
       if (type === 'cl') {
         this.modelData.showBg = false;

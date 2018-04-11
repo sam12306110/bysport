@@ -462,34 +462,6 @@ div#back ul li table {
 }
 
 
-/* 語系下拉圖片設定 */
-/*div#back ul ul.pd a:link, div#back ul ul.pd a:visited { color:#303030;}*/
-/*div#back ul ul.pd a:hover {color:#CC6600; }*/
-
-/*div#back ul ul.pd li.vi a:hover {  background-position: 0 -514px;}*/
-/*div#back ul ul.pd li.vi a { background: url(head_lang.gif) no-repeat 0 -490px; width:71px; height:24px;}!*該語系使用父層圖*!*/
-
-/*div#back ul ul.pd li.cn a:hover {color:#303030; }*/
-/*div#back ul ul.pd li.cn a { background: url(head_lang_cn.gif) no-repeat 0 -25px;}!*該語系使用父層圖*!*/
-/*!*div#back ul ul.pd li.tw a:hover { color:#CC6600; background-position: -106px 0;}*!*/
-/*div#back ul ul.pd li.tw a { background: url(head_lang.gif) no-repeat 0 -70px; width:71px; height:24px;}*/
-/*div#back ul ul.pd li.tw a:hover {  background-position: 0 -94px;}*/
-
-/*!*div#back ul ul.pd li.cn a { background: url(head_lang.gif) no-repeat; width:71px; height:24px;}*/
-/*div#back ul ul.pd li.cn a:hover {  background-position: 0 -24px;}*!*/
-/*div#back ul ul.pd li.us a { background: url(head_lang.gif) no-repeat 0 -560px; width:71px; height:24px;}*/
-/*div#back ul ul.pd li.us a:hover {  background-position: 0 -584px;}*/
-/*!* 幫助下拉圖片設定 *!*/
-/*div#back ul ul.pd li.qa_on a { width:50px; background: url(head_qa.gif) no-repeat 0 -25px;}!*該語系使用父層圖*!*/
-/*div#back ul ul.pd li.msg a { background: url(head_qa_sub.gif) no-repeat;}*/
-/*div#back ul ul.pd li.msg a:hover { background-position: 0 -23px;}*/
-/*div#back ul ul.pd li.roul a , div#back ul ul.pd li.wap a {background: url(head_qa_sub.gif) no-repeat 0 -70px;}*/
-/*div#back ul ul.pd li.roul a:hover , div#back ul ul.pd li.wap a:hover {background-position: 0 -93px;}*/
-/*div#back ul ul.pd li.odd a { background: url(head_qa_sub.gif) no-repeat 0 -140px;width:112px; height:24px; padding-left:12px; text-align: left;}*/
-/*div#back ul ul.pd li.odd a:hover {  background-position: 0 -164px;}*/
-/*!*共同寬度設定*!*/
-/*div#back ul ul.pd li.msg a , div#back ul ul.pd li.roul a , div#back ul ul.pd li.wap a*/
-/*{ width:112px; height:23px; padding-left:12px; text-align: left;}*/
 
 
 /*height*/
@@ -591,9 +563,6 @@ strong, b {font-weight: bold;}
 .notice table{width:98%;margin:0 auto;}
 .notice tr th { background-color: #6e7458; border-color:#dcdcdc; font-weight: normal; color: #FFF; padding: 5px; }
 .notice tr td{border-color:#C3C3C3; line-height: 20px; padding:3px 2px;}
-/*add*/
-/*.tb_confirm .yes { width:80px; height:26px;}
-.tb_confirm .no { vertical-align:bottom; margin-bottom:2px;}*/
 
 
 #sportwrapbox { /*float:left;*/ width:738px;/* max-height:540px; */overflow:hidden; margin-left:3px; margin-top:-7px; display:block; position:relative;}
@@ -628,9 +597,6 @@ strong, b {font-weight: bold;}
 #TB_window a:active {color: #666666;}
 #TB_window a:focus{color: #666666;}
 
-/* ----------------------------------------------------------------------------------------------------------------*/
-/* ---------->>> thickbox settings <<<-----------------------------------------------------------------------------*/
-/* ----------------------------------------------------------------------------------------------------------------*/
 #TB_overlay {
   position: fixed;
   z-index:100;

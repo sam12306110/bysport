@@ -21,7 +21,6 @@ export default {
         let len = this.soPage , temp = [], list = [], count = Math.floor(this.pageInfo.pagegroup / 2) ,center = this.pageInfo.current;
         if( len <= this.pageInfo.pagegroup ){
           while(len--){ temp.push({text:this.page-len,val:this.page-len});}
-          console.count(temp);
           return temp;
 
         }
