@@ -44,13 +44,13 @@ export default {
                 (this.pageInfo.current > count + 1) && list.unshift({ text:'...',val: list[0].val - 1 });
                 (this.pageInfo.current < this.page - count) && list.push({ text:'...',val: list[list.length - 1].val + 1 });
             }
-//            console.log(list)
+
 
             return list;
         }
     },
     created:function (argument) {
-//        console.log(this.pageInfo)
+
 
     },
     methods: {

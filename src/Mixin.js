@@ -5,12 +5,11 @@ let MyMixin = {
             race:{},
             soPage:[],
             dataType:1,
-            window_lsm:0,
-            window_hight:0,
+            windowLsm:'',
             pageData:'',
             betMoney:'',
             userMoney:'',
-            showBg:false
+
             }
   },
   computed:{
@@ -58,7 +57,7 @@ let MyMixin = {
               obj[name] = arr;
             }
             _self.race = obj;
-            _self.window_lsm = resData.data.lsm.split('|');
+            _self.windowLsm = resData.data.lsm.split('|');
             let pages = resData.data.fy.p_page;
             if (_self.soPage.length === 0) {
               for (let l = 0; l < pages; l++) {
@@ -150,6 +149,14 @@ let MyMixin = {
         case '20':
           _self.time = 20;
           break
+      }
+    },
+    comShowModel: function (type) {
+      if (type === 'op') {
+        this.modelData.showBg = true;
+      }
+      if (type === 'cl') {
+        this.modelData.showBg = false;
       }
     },
   }
