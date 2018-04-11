@@ -9,7 +9,7 @@
                 <pagination :pageInfo="pageInfo" @change="pagechange"></pagination>
               </dt>
               <dd class="refresh">
-                <a href="javascript:;" onclick="reloadList()"><span id="djs">60</span></a>
+                <a href="javascript:;" @click="clickRef('90')"><span id="djs">{{time}}</span></a>
               </dd>
               <dd>
                 <a href="javascript:;" @click="showMod('op')" title="选择联赛" class="thickbox">选择联赛(全)</a>
@@ -112,7 +112,7 @@
             </table>
           </div>
         </div>
-        <div id="refresh_down" class="refresh_M_btn">
+        <div id="refresh_down" class="refresh_M_btn" @click="clickRef('90')">
           <span>刷新</span>
         </div>
       </div>
@@ -134,6 +134,7 @@
             return {
                 action: '../api/app/member/show/json/ft_2_1.php',
                 showType: '早餐',
+                time:90,
                 pageInfo:{
                 total:100,  // 记录总条数   默认空，如果小于pageNum则组件不显示   类型Number
                 current:1,  // 当前页数，   默认为1                             类型Number
@@ -149,7 +150,14 @@
         },
         mounted: function () {
           let _self=this;
-          _self.getData()
+          if (_self.time > 1) {
+            clearInterval(_self.timer());
+            _self.time = '';
+            _self.timer('90')
+          } else {
+            _self.timer('90')
+          }
+
         },
         methods: {
              pagechange:function(current){     // 页码改变传入新的页码，此处做回调

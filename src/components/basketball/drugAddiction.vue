@@ -13,131 +13,68 @@
                 <a href="javascript:;" onclick="reloadList()"><span id="djs">82</span></a>
               </dd>
               <dd>
-                <a href="#TB_inline?height=400&amp;width=660&amp;inlineId=leagueBox" title="选择联赛" class="thickbox">选择联赛(全                        )</a>
+                <a title="选择联赛" class="thickbox">选择联赛(全)</a>
               </dd>
             </dl>
             <table border="1" cellpadding="0" cellspacing="0" id="data">
               <tbody>
               <tr class="datatop">
-                <th class="time">时间</th>
-                <th class="team">主客队伍</th>
-                <th>独赢盘</th>
-                <th>让分</th>
-                <th>大小</th>
-                <th>单双</th>
-                <th colspan="2">球队得分：大/小</th>
-              </tr>
-              <tr>
-                <td colspan="10" class="b_title">韩国篮球联赛</td>
-              </tr>
-              <tr class="b_cen">
-                <td rowspan="2" style=" white-space:nowrap;">
-                  03-20<br>06:00<div class="roll">滚球</div>                        </td>
-                <td rowspan="2" align="left">全州KCC宙斯盾<br>仁川东土大象 </td>
-                <td>&nbsp;</td>
-                <td align="right">
-                  <span class="qiu">5.5</span><a href="javascript:" title="全州KCC宙斯盾"><font>0.74</font></a>                        </td>
-                <td align="right">
-                  <span class="qiu">大166.5</span>
-                  <a href="javascript:" title="大"><font>1.03</font></a>                        </td>
-                <td>
-                </td>
-                <td>
-                  <span class="qiu"></span>
-                  &nbsp;                        </td>
-                <td>
-                  <span class="qiu"></span>
-                  &nbsp;                        </td>
-              </tr>
-              <tr class="b_cen">
-                <td>&nbsp;</td>
-                <td align="right">
-                  <a href="javascript:"  title="仁川东土大象"><font>1.14</font></a>                        </td>
-                <td align="right">
-                  <span class="qiu">小166.5</span>
-                  <a href="javascript:" title="小"><font>0.83</font></a>                        </td>
-                <td>
-                </td>
-                <td>
-                  <span class="qiu"></span>
-                  &nbsp;                        </td>
-                <td>
-                  <span class="qiu"></span>
-                  &nbsp;                        </td>
-              </tr>
-              <tr class="b_cen">
-                <td rowspan="2" style=" white-space:nowrap;">
-                  03-20<br>06:00<div class="roll">滚球</div>                        </td>
-                <td rowspan="2" align="left">全州KCC宙斯盾<br>仁川东土大象 </td>
-                <td>&nbsp;</td>
-                <td align="right">
-                  <span class="qiu">7.5</span><a href="javascript:"  title="全州KCC宙斯盾"><font>1.04</font></a>                        </td>
-                <td align="right">
-                  <span class="qiu">大164.5</span>
-                  <a href="javascript:" title="大"><font>0.83</font></a>                        </td>
-                <td>
-                </td>
-                <td>
-                  <span class="qiu"></span>
-                  &nbsp;                        </td>
-                <td>
-                  <span class="qiu"></span>
-                  &nbsp;                        </td>
-              </tr>
-              <tr class="b_cen">
-                <td>&nbsp;</td>
-                <td align="right">
-                  <a href="javascript:"  title="仁川东土大象"><font>0.84</font></a>                        </td>
-                <td align="right">
-                  <span class="qiu">小164.5</span>
-                  <a href="javascript:" title="小"><font>1.03</font></a>
-                </td>
-                <td>
-                </td>
-                <td>
-                  <span class="qiu"></span>
-                  &nbsp;                        </td>
-                <td>
-                  <span class="qiu"></span>
-                  &nbsp;                        </td>
-              </tr>
-              <tr class="b_cen">
-                <td rowspan="2" style=" white-space:nowrap;">
-                  03-20<br>06:00                        </td>
-                <td rowspan="2" align="left">全州KCC宙斯盾 - (第1节)<br>仁川东土大象 - (第1节) </td>
-                <td><a href="javascript:" title="全州KCC宙斯盾 - (第1节)"><font>1.48</font></a></td>
-                <td align="right">
-                  <span class="qiu">2.5</span><a href="javascript:"  title="全州KCC宙斯盾 - (第1节)"><font>0.84</font></a>
-                </td>
-                <td align="right">
-                  <span class="qiu">大40.5</span>
-                  <a href="javascript:" title="大"><font>0.90</font></a>                        </td>
-                <td>
-                  <span class="qiu">单</span><a href="javascript:"  title="单"><font>1.91</font></a>                        </td>
-                <td>
-                  <span class="qiu"></span>
-                  &nbsp;                        </td>
-                <td>
-                  <span class="qiu"></span>
-                  &nbsp;                        </td>
-              </tr>
-              <tr class="b_cen">
-                <td><a href="javascript:" title="仁川东土大象 - (第1节)"><font>2.57</font></a></td>
-                <td align="right">
-                  <a href="javascript:" title="仁川东土大象 - (第1节)"><font>1.02</font></a>                        </td>
-                <td align="right">
-                  <span class="qiu">小40.5</span>
-                  <a href="javascript:"title="小"><font>0.94</font></a>                        </td>
-                <td>
-                  <span class="qiu">双</span><a href="javascript:" title="双"><font>1.91</font></a>                        </td>
-                <td>
-                  <span class="qiu"></span>
-                  &nbsp;                        </td>
-                <td>
-                  <span class="qiu"></span>
-                  &nbsp;                        </td>
-              </tr>
+                <th class="time" style="width: 44px">时间</th>
+                <th class="team" style="width: 200px">主客队伍</th>
+                <th style="width: 60px;">独赢盘</th>
+                <th style="width: 135px;">让分</th>
+                <th style="width: 133px;">大小</th>
+                <th style="width: 134px;">单双</th>
 
+              </tr>
+               <tr>
+                 <td colspan="9">
+                   <table frame="void" cellpadding="0" cellspacing="0" v-for="(item,key) in race" id="stf">
+                     <tr><td colspan="9" class="b_title" style="border-top:none;border-bottom:none">{{key}}</td></tr>
+                     <tbody v-for="items in item">
+                     <tr>
+                       <td style="border-left:1px solid #C3C3C3;border-bottom:1px solid #C3C3C3 ; width: 44px" rowspan="2" v-html="items.Match_Date">
+                       </td>
+                       <td rowspan="2" align="left" style="width: 200px;">
+                         {{items.Match_Master}}<br>{{items.Match_Guest}}
+                       </td>
+                       <td align="right" style="width: 60px;">
+                         <a href="javascript:"  :title="items.Match_BzM" v-if="items.Match_BzM!=null&&items.Match_BzM!='0'"><font>{{items.Match_BzM}}</font></a>
+                       </td>
+                       <td align="right" style="width: 135px;">
+                         <span class="qiu" v-if="items.Match_Ho!=null&&items.Match_Ho!='0'">{{items.Match_ShowType == 'H' && items.Match_Ho != '0' ? items.Match_RGG : ''}}</span>
+                         <a href="javascript:"  v-if="items.Match_Ho!=null&&items.Match_Ho!='0'"><font>{{items.Match_Ho}}</font></a>
+                       </td>
+                       <td  align="right" style="width: 133px;">
+                         <span class="qiu" v-if="items.Match_DxDpl!=null&&items.Match_DxDpl!='0'">{{items.Match_DxGG1}}</span>
+                         <a href="javascript:"title="大" v-if="items.Match_DxDpl!=null&&items.Match_DxDpl!='0'"><font>{{items.Match_DxDpl}}</font></a>
+                       </td>
+                       <td style="width: 134px;" align="right">
+                         <span class="qiu" v-if="items.Match_DsDpl!=null&&items.Match_DsDpl!='0'">单</span>
+                         <a href="javascript:" title="单" v-if="items.Match_DsDpl!=null&&items.Match_DsDpl!='0'"><font>{{items.Match_DsDpl}}</font></a>
+                       </td>
+                     </tr>
+                     <tr>
+                       <td align="right">
+                         <a href="javascript:"  :title="items.Match_BzG" v-if="items.Match_BzG!=null&&items.Match_BzG!='0'"><font>{{items.Match_BzG}}</font></a>
+                       </td>
+                       <td align="right">
+                         <span class="qiu" v-if="items.Match_Ao!=null&&items.Match_Ao!='0'">{{items.Match_ShowType=='C'&&items.Match_Ao!='0'?items.Match_RGG:''}}</span>
+                         <a href="javascript:"  v-if="items.Match_Ao!=null&&items.Match_Ao!='0'"><font>{{items.Match_Ao}}</font></a>
+                       </td>
+                       <td align="right">
+                         <span class="qiu" v-if="items.Match_DxXpl!=null&&items.Match_DxXpl!='0'">{{items.Match_DxGG2}}</span>
+                         <a href="javascript:"  title="小" v-if="items.Match_DxXpl!=null&&items.Match_DxXpl!='0'"><font>{{items.Match_DxXpl}}</font></a></td>
+                       <td align="right">
+                         <span class="qiu" v-if="items.Match_DsDpl!=null&&items.Match_DsDpl!='0'">双</span>
+                         <a href="javascript:" title="双"  v-if="items.Match_DsSpl!=null&&items.Match_DsSpl!='0'"><font>{{items.Match_DsSpl}}</font></a>
+                       </td>
+                     </tr>
+
+                     </tbody>
+                   </table>
+                 </td>
+               </tr>
               </tbody>
             </table>
           </div>
@@ -157,7 +94,7 @@
         components: {},
         data: function () {
             return {
-              action:'../api/app/member/show/json/bk_2_1.php',
+              action:'../api/app/member/show/json/bk_1_1.php',
             }
         },
         created: function () {

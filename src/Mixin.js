@@ -109,7 +109,49 @@ let MyMixin = {
               clock += ss;
               return  clock;
 },
+    timer: function (date) {
+      return setInterval(() => {
+        let _self = this;
+        _self.time = _self.time - 1;
+        if (_self.time < 1) {
+          switch (date) {
+            case '90':
+              _self.time = 90;
+              break;
+            case '180':
+              _self.time = 180;
+              break;
+            case '999':
+              _self.time = 999;
+              break;
+            case '20':
+              _self.time = 20;
+              break
+          }
 
+          this.getData(_self.eventName, '')
+        }
+      }, 1000)
+    },
+    clickRef: function (date) {
+      let _self = this;
+
+      _self.getData(_self.eventName, '0');
+      switch (date) {
+        case '90':
+          _self.time = 90;
+          break;
+        case '180':
+          _self.time = 180;
+          break;
+        case '999':
+          _self.time = 999;
+          break;
+        case '20':
+          _self.time = 20;
+          break
+      }
+    },
   }
 };
 export default MyMixin;
