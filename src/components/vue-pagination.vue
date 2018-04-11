@@ -1,5 +1,5 @@
-<template type="text/template" id="template_pagination">
-    <section class="pages-wrap" v-show="pageInfo.total>pageInfo.pagenum">
+<template id="template_pagination">
+    <section class="pages-wrap">
         <ul class="pagination clearfix">
             <!--<li :class="{'disabled': pageInfo.current == 1}"><a href="javascript:;" @click="clickCurrent(1)"> 首页 </a></li>-->
             <li v-if=" pageInfo.current != 1" :class="{'disabled': pageInfo.current == 1}"><a href="javascript:;" @click="clickCurrent(pageInfo.current - 1)"> 上一页 </a></li>
@@ -7,7 +7,7 @@
                 <a href="javascript:;" v-if="pageInfo.current == p.val" :style="{backgroundColor:pageInfo.skin , borderColor:pageInfo.skin}" @click="clickCurrent(p.val)"> {{ p.text }} </a>
                 <a href="javascript:;" v-else  @click="clickCurrent(p.val)"> {{ p.text }} </a>
             </li>
-            <li :class="{'disabled': pageInfo.current == pageInfo.page}"><a href="javascript:;" @click="clickCurrent(pageInfo.current + 1)"> 下一页</a></li>
+            <li v-if="setList.length!=0" :class="{'disabled': pageInfo.current == pageInfo.page}"><a href="javascript:;" @click="clickCurrent(pageInfo.current + 1)"> 下一页</a></li>
             <!--<li :class="{'disabled': pageInfo.current == pageInfo.page}"><a href="javascript:;" @click="clickCurrent(pageInfo.page)"> 尾页 </a></li>-->
         </ul>
     </section>
@@ -15,47 +15,42 @@
 <script>
 import Vue from 'vue'
 export default {
-    props:['pageInfo'],
+    props:['pageInfo','soPage'],
     computed: {
-        page:function() {
-            return Math.ceil(this.pageInfo.total / this.pageInfo.pagenum);
-        },
-        setList:function(){
-            let len = this.page , temp = [], list = [], count = Math.floor(this.pageInfo.pagegroup / 2) ,center = this.pageInfo.current;
-            if( len <= this.pageInfo.pagegroup ){
-                while(len--){ temp.push({text:this.page-len,val:this.page-len});};
-                return temp;
-            }
+      setList:function(){
+        let len = this.soPage , temp = [], list = [], count = Math.floor(this.pageInfo.pagegroup / 2) ,center = this.pageInfo.current;
+        if( len <= this.pageInfo.pagegroup ){
+          while(len--){ temp.push({text:this.page-len,val:this.page-len});}
+          console.count(temp);
+          return temp;
 
-            while(len--){ temp.push(this.page - len);}
-            let idx = temp.indexOf(center);
-
-            (idx < count) && ( center = center + count - idx);
-            (this.pageInfo.current > this.page - count) && ( center = this.page - count);
-            temp = temp.splice(center - count -1, this.pageInfo.pagegroup);
-            do {
-                let t = temp.shift();
-                list.push({
-                    text: t,
-                    val: t
-                });
-            }while(temp.length);
-            if( this.page > this.pageInfo.pagegroup ){
-                (this.pageInfo.current > count + 1) && list.unshift({ text:'...',val: list[0].val - 1 });
-                (this.pageInfo.current < this.page - count) && list.push({ text:'...',val: list[list.length - 1].val + 1 });
-            }
-
-
-            return list;
         }
+        while(len--){ temp.push(this.soPage - len);}
+        let idx = temp.indexOf(center);
+        (idx < count) && ( center = center + count - idx);
+        (this.pageInfo.current > this.page - count) && ( center = this.page - count);
+        temp = temp.splice(center - count -1, this.pageInfo.pagegroup);
+        do {
+          let t = temp.shift();
+          list.push({
+            text: t,
+            val: t
+          });
+        }while(temp.length);
+        if( this.soPage > this.pageInfo.pagegroup ){
+          (this.pageInfo.current > count + 1) && list.unshift({ text:'...',val: list[0].val - 1 });
+          (this.pageInfo.current < this.page - count) && list.push({ text:'...',val: list[list.length - 1].val + 1 });
+        }
+
+        return list;
+      }
     },
     created:function (argument) {
-
 
     },
     methods: {
         clickCurrent: function(idx) {
-            if( this.pageInfo.current != idx && idx > 0 && idx < this.page + 1) {
+            if( this.pageInfo.current != idx && idx > 0 && idx < this.soPage + 1) {
                 this.pageInfo.current = idx;
                 this.$emit('change',this.pageInfo.current);
             }

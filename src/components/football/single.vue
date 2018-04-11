@@ -6,7 +6,7 @@
         <div class="tbox_content">
           <dl>
             <dt>
-              <pagination :pageInfo="pageInfo" @change="pagechange"></pagination>
+              <pagination :pageInfo="pageInfo" :soPage="soPage" @change="pageChange"></pagination>
             </dt>
             <dd class="refresh">
               <a href="javascript:;" @click="clickRef('90')"><span id="djs">{{time}}</span></a>
@@ -163,15 +163,9 @@
         showType: '早餐',
         time: 90,
         pageInfo: {
-          total: 100,  // 记录总条数   默认空，如果小于pageNum则组件不显示   类型Number
           current: 1,  // 当前页数，   默认为1                             类型Number
-          pagenum: 10, // 每页显示条数,默认10                              类型Number
           pagegroup: 5,    // 分页条数     默认为5，需传入奇数                 类型Number
           skin: '#86715', // 选中页码的颜色主题 默认为'#16a086'               类型String
-        },
-        modelData: {
-          showBg: false,
-          selectData: '',
         },
         eventName:''
       }
@@ -191,8 +185,8 @@
 
     },
     methods: {
-      pagechange: function (current) {     // 页码改变传入新的页码，此处做回调
-        console.log(current);
+      pageChange: function (current) {     // 页码改变传入新的页码，此处做回调
+          this.getData('',current-1)
       },
       getChild: function (data) {
         let _self = this;

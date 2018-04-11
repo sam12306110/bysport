@@ -3,13 +3,16 @@ let MyMixin = {
     return {
             source:[],
             race:{},
-            soPage:[],
+            soPage:'',
             dataType:1,
             windowLsm:'',
             pageData:'',
             betMoney:'',
             userMoney:'',
-
+            modelData: {
+        showBg: false,
+        selectData: '',
+      },
             }
   },
   computed:{
@@ -58,17 +61,17 @@ let MyMixin = {
             }
             _self.race = obj;
             _self.windowLsm = resData.data.lsm.split('|');
-            let pages = resData.data.fy.p_page;
-            if (_self.soPage.length === 0) {
-              for (let l = 0; l < pages; l++) {
-                _self.soPage.push(l)
-              }
-            } else {
-              _self.soPage = [];
-              for (let ls = 0; ls < pages; ls++) {
-                _self.soPage.push(ls)
-              }
-            }
+            _self.soPage = resData.data.fy.p_page;
+            // if (_self.soPage.length === 0) {
+            //   for (let l = 0; l < pages; l++) {
+            //     _self.soPage.push(l)
+            //   }
+            // } else {
+            //   _self.soPage = [];
+            //   for (let ls = 0; ls < pages; ls++) {
+            //     _self.soPage.push(ls)
+            //   }
+            // }
           }
         }
       }).catch(function (err) {
