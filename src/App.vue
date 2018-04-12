@@ -3,17 +3,12 @@
     <div id="sportsbox">
       <div class="bodyset">
         <div id="container">
-          <div id="header">
-               <span>
-
-               </span>
-          </div>
           <div id="welcome">
             <ul class="level1">
               <!--会员帐号-->
               <li class="name">您好,
                 <strong id="userid">
-                  111qqq
+                  {{userName}}
                 </strong>
                 <div id="head_date" style="">{{nowTime}}
                   <span id="rbType" style="display:none;">
@@ -153,12 +148,11 @@
           </div>
           <div id="credit_main">
                 <span id="credit">
-                  人民币 9590.38
+                  人民币 {{userMoney}}
                 </span>
             <input name="" type="button" class="re_credit" value="" onclick="javascript:reloadCrditFunction();">
           </div>
         </div>
-
       </div>
       <div id="OSEL">
         <div id="main" class="main">
@@ -167,13 +161,14 @@
             <div :class="checkRecord=='jy'?'record_btn':'record_on'" id="record_button" @click="setRecord('sr')">最新十笔交易</div>
           </div>
           <div id="order_div" style="overflow:hidden;">
-            <div v-if="checkRecord=='jy'" id="pls_bet" style="background-color: rgb(227, 207, 170); left: 0; top: 0;  ">
+            <div v-if="checkRecord=='jy'" id="pls_bet">
               <img src="../static/images/header/order_none.jpg" width="216" height="22">
-              <div style="width:216px; height:63px; text-align:center; padding-top:16px;">
+              <div  style="display: none" class="peilv">
                 <font style="font:1em Arial, Helvetica, sans-serif; font-weight:bold;">
                   点击赔率便可将<br>选项加到交易单里。
                 </font>
               </div>
+              <Bet :userMoney="userMoney"></Bet>
             </div>
             <div v-if="checkRecord=='sr'" id="rec5_div" >
               <div id="orderBox">
@@ -255,24 +250,29 @@
 <script>
   import Mixin from '@/Mixin'
   import $router from './router'
-
+  import Bet from '@/components/Bet'
   export default {
     name: 'App',
     mixins: [Mixin],
-    components: {},
+    components: {
+      Bet
+    },
     data: function () {
       return {
         nowTime: '',
         checkMenu: true,
         menuBg: 'jr',
         selectBg:'FT',
-        checkRecord:'jy'
+        checkRecord:'jy',
+        userMoney: '',
+        userName: '',
       }
     },
     created: function () {
       let _self = this;
       _self.nowTime = _self.CurentTime();
-      $router.push('/todayBall')
+      $router.push('/todayBall');
+      _self.getUserInfo();
     },
     mounted: function () {
 
@@ -337,6 +337,14 @@
              }else {
                 this.checkRecord='sr'
              }
+      },
+      getUserInfo: function () {
+        axios.get('/api/json/center/?r=Money').then(res => {
+          this.userMoney = res.data.data.user_money;
+          this.userName = res.data.data.user_name
+        }).catch(err => {
+          throw err
+        })
       }
     }
   }

@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import axios from  'axios'
-
+import store from './_vuex/store'
 // import '../static/css/mem_header_ft_cn.css'
 Vue.config.productionTip = false;
 
@@ -12,6 +12,7 @@ Vue.config.productionTip = false;
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 });

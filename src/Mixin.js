@@ -151,6 +151,75 @@ let MyMixin = {
         this.modelData.showBg = false;
       }
     },
+    ClickBet: function (typename, event, match_id_in, time, zhuKe, eventMing, peiLv, tzType, point_column, pk, cG,) {
+      let _self = this;
+      axios.get('../api/json/center/?r=Money').then(res => {
+        // if (res.status === 200 && res.data.code === 2) {
+        //   alert('您还未登录，请先登录');
+        //   _self.$store.state.betShow=false;
+        // }
+        // if (res.status === 200 && res.data.code === 0) {
+          _self.$store.state.betShow = true;
+          _self.$store.state.BetSwitch = true;
+          if (tzType === '1') {
+            _self.$store.state.betInfo = false;
+            _self.sportArr1.push([event, typename, match_id_in, zhuKe, peiLv, eventMing, point_column, cG]);
+            if (_self.sportArr1.length > 8) {
+              alert('串关最多允许8场赛事');
+              _self.sportArr1.splice(_self.sportArr1.length - 1, 1);
+              return
+            }
+            for (let i = 0; i < _self.sportArr1.length; i++) {
+              if (_self.sportArr1[i][5].indexOf('角球') !== -1) {
+                alert('角球赛事不能参与串关');
+                _self.sportArr1.splice(_self.sportArr1.length - 1, 1);
+              }
+              if (_self.sportArr1[i][0].indexOf('冠军') !== -1) {
+                alert('冠军未开发串关功能');
+                _self.sportArr1.splice(_self.sportArr1.length - 1, 1);
+              }
+              if (_self.sportArr1.length > 1 && _self.sportArr1[i + 1]) {
+                if (_self.sportArr1[i][0] === _self.sportArr1[i + 1][0]) {
+                  alert('同场赛事不能重复参与串关');
+                  _self.sportArr1.splice(_self.sportArr1.length - 1, 1);
+                }
+              }
+            }
+            _self.$store.state.sportArr = _self.sportArr1;
+          }
+          if (tzType === '2') {
+            _self.$store.state.betInformation = true;
+            _self.$store.state.betData.typeName = typename;
+            _self.$store.state.betData.event = event;
+            _self.$store.state.betData.match_id_in = match_id_in;
+            _self.$store.state.betData.baskTime = time;
+            _self.$store.state.betData.zhuKe = zhuKe;
+            _self.$store.state.betData.eventMing = eventMing;
+            _self.$store.state.betData.peiLv = peiLv;
+            _self.$store.state.betData.point_column = point_column;
+            _self.$store.state.betData.pk = pk;
+          }
+          else {
+            let times = time.split(/<br\s{0,1}\/?>/);
+            _self.$store.state.betInformation = true;
+            _self.$store.state.betData.typeName = typename;
+            _self.$store.state.betData.event = event;
+            _self.$store.state.betData.match_id_in = match_id_in;
+            _self.$store.state.betData.baskTime = times[0];
+            _self.$store.state.betData.todayTime = times[1];
+            _self.$store.state.betData.zhuKe = zhuKe;
+            _self.$store.state.betData.eventMing = eventMing;
+            _self.$store.state.betData.peiLv = peiLv;
+            _self.$store.state.betData.point_column = point_column;
+            _self.$store.state.betData.pk = pk;
+
+          // }
+        }
+      }).catch(err => {
+        throw err
+      });
+
+    },
   }
 };
 export default MyMixin;
