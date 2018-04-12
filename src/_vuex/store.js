@@ -29,8 +29,8 @@ const state = {
     point_column:[]
   },
   betShow:false,
-  BetSwitch:true,
-  betInfo:true,
+  BetSwitch:false,
+  betInfo:false,
   sportArr:[],
 };
 

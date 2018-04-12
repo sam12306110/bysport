@@ -161,13 +161,15 @@
             <div :class="checkRecord=='jy'?'record_btn':'record_on'" id="record_button" @click="setRecord('sr')">最新十笔交易</div>
           </div>
           <div id="order_div" style="overflow:hidden;">
-            <div v-if="checkRecord=='jy'" id="pls_bet">
+            <div v-if="checkRecord=='jy'&&!$store.state.betShow" id="pls_bet">
               <img src="../static/images/header/order_none.jpg" width="216" height="22">
-              <div  style="display: none" class="peilv">
+              <div  class="peilv">
                 <font style="font:1em Arial, Helvetica, sans-serif; font-weight:bold;">
                   点击赔率便可将<br>选项加到交易单里。
                 </font>
               </div>
+            </div>
+            <div v-if="checkRecord=='jy'&&$store.state.betShow" id="bet_div">
               <Bet :userMy="userMoney"></Bet>
             </div>
             <div v-if="checkRecord=='sr'" id="rec5_div" >
@@ -251,6 +253,7 @@
   import Mixin from '@/Mixin'
   import $router from './router'
   import Bet from '@/components/Bet'
+  import $store from '@/_vuex/store'
   export default {
     name: 'App',
     mixins: [Mixin],

@@ -47,7 +47,7 @@
                     </td>
                     <td align="right" style="width: 38px;">
                       <a href="javascript:" :title="items.Match_BzM"
-                         @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Master,items.Match_BzM,'1','Match_BzM')" v-if="items.Match_BzM!=null&&items.Match_BzM!='0'">
+                         @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Master,items.Match_BzM,'1','Match_BzM','','独赢')" v-if="items.Match_BzM!=null&&items.Match_BzM!='0'">
                         <font>{{items.Match_BzM}}</font>
                       </a>
                     </td>
@@ -68,12 +68,12 @@
                     <td style="width: 49px;" align="right">
                       <span class="qiu" v-if="items.Match_DsDpl!=null&&items.Match_DsDpl!='0'">单</span>
                       <a href="javascript:" title="单"
-                         @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},'单',items.Match_DsDpl,'1','Match_DsDpl')"  v-if="items.Match_DsDpl!=null&&items.Match_DsDpl!='0'">
+                         @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},'单',items.Match_DsDpl,'1','Match_DsDpl','','单双')"  v-if="items.Match_DsDpl!=null&&items.Match_DsDpl!='0'">
                         <font>{{items.Match_DsDpl}}</font></a>
                     </td>
                     <td style="width: 36px;" align="right" class="b_1st">
                       <a href="javascript:"
-                         v-if="items.Match_Bmdy!=null&&items.Match_Bmdy!='0'" @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Master+'-[上半]',items.Match_Bmdy,'1','Match_Bmdy')">
+                         v-if="items.Match_Bmdy!=null&&items.Match_Bmdy!='0'" @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Master+'-[上半]',items.Match_Bmdy,'1','Match_Bmdy','','独赢')">
                         <font>{{items.Match_Bmdy}}</font></a>
                     </td>
                     <td style="width: 91px;" align="right" class="b_1st">
@@ -93,7 +93,7 @@
                   </tr>
                   <tr>
                     <td align="right">
-                      <a @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Guest,items.Match_BzG,'1','Match_BzG')"
+                      <a @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Guest,items.Match_BzG,'1','Match_BzG','','独赢')"
                          href="javascript:" :title="items.Match_BzG" v-if="items.Match_BzG!=null&&items.Match_BzG!='0'">
                         <font>{{items.Match_BzG}}</font>
                       </a>
@@ -115,12 +115,12 @@
                     <td align="right">
                       <span class="qiu" v-if="items.Match_DsDpl!=null&&items.Match_DsDpl!='0'">双</span>
                       <a href="javascript:" title="双"
-                         v-if="items.Match_DsSpl!=null&&items.Match_DsSpl!='0'" @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},'双',items.Match_DsSpl,'1','Match_DsDpl')">
+                         v-if="items.Match_DsSpl!=null&&items.Match_DsSpl!='0'" @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},'双',items.Match_DsDpl,'1','Match_DsDpl','','单双')">
                         <font>{{items.Match_DsSpl}}</font></a>
                     </td>
                     <td align="right" class="b_1st">
                       <a href="javascript:"
-                         v-if="items.Match_Bgdy1!=null&&items.Match_Bgdy1!='0'" @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Guest+'-[上半]',items.Match_Bgdy1,'1','Match_Bgdy1')">
+                         v-if="items.Match_Bgdy1!=null&&items.Match_Bgdy1!='0'" @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Guest+'-[上半]',items.Match_Bgdy1,'1','Match_Bgdy1','','独赢')">
                         <font>{{items.Match_Bgdy1}}</font></a>
                     </td>
                     <td align="right" class="b_1st">
@@ -142,14 +142,14 @@
                     <td align="left">和局</td>
                     <td align="right">
                       <a href="javascript:" title="和局"
-                         v-if="items.Match_BzH!=null&&items.Match_BzH!='0'" @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},'和局',items.Match_BzH,'1','Match_BzH')">
+                         v-if="items.Match_BzH!=null&&items.Match_BzH!='0'" @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},'和局',items.Match_BzH,'1','Match_BzH','','和局')">
                         <font>{{items.Match_BzH}}</font>
                       </a>
                     </td>
                     <td colspan="3"></td>
                     <td align="right" class="b_1st">
                       <a href="javascript:" title="和局"
-                         v-if="items.Match_Bhdy1!=null&&items.Match_Bhdy1!='0'" @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},'和局',items.Match_Bhdy1,'1','Match_Bhdy1')">
+                         v-if="items.Match_Bhdy1!=null&&items.Match_Bhdy1!='0'" @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},'和局',items.Match_Bhdy1,'1','Match_Bhdy1','','单双')">
                         <font>{{items.Match_Bhdy1}}</font></a>
                     </td>
                     <td colspan="2" class="b_1st"></td>

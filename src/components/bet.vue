@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="orderBox">
-      <p>可用额度：{{userMy}}</p>
+    <div v-if="$store.state.BetSwitch" class="orderBox">
+      <p class="eD">可用额度：{{userMy}}</p>
       <h6>
         {{$store.state.betData.typeName}}
       </h6>
@@ -19,32 +19,29 @@
       <div class="remark">
         <p>自动接受最新赔率</p>
         <p>最低限额：{{limit}}</p>
-        <p>单注限额：100000</p>
-        <p>单场最高：200000</p>
+        <p>单注限额：{{lowest}}</p>
+        <p>单场最高：{{singleNote}}</p>
       </div>
     </div>
-    <div class="orderBox">
-
-      <h6></h6>
+    <div v-if="!$store.state.BetSwitch" class="orderBox">
       <div class="ord">
-        <p>串关信息：6 串 1 @ <span class="odds">175.00</span></p>
-        <p>下注金额：<input type="text" name="gold" size="5" maxlength="8" onkeypress="return CheckKey()"
-                       onblur="changeWin(this,1)" class="gold"></p>
-        <p>可赢金额：<font class="win" >174003.00</font></p>
+        <p>串关信息：{{$store.state.sportArr.length}} 串 1 @ <span class="odds">{{peiLv}}</span></p>
+        <p>下注金额：<input type="text" class="gold" v-model="amount"></p>
+        <p>可赢金额：<font class="win" >{{amount ? winAmount : '0.00'}}</font></p>
         <div class="tb_confirm">
           <input type="button" name="close" value="取消交易"  class="no">
           <span ><input type="submit" name="submit" value="确定交易" class="yes"></span>
         </div>
-        <ul>印度超级杯
+        <ul v-for="(items,index) in $store.state.sportArr">{{items[0]}}
             <a class="cancel"
-                    href="javascript:;">X</a>
-          <li>贾姆谢德布尔 [中] VS 果阿</li>
-          <li>全场-独赢<br>和局 @ <span class="odds">3.45</span></li>
+                    href="javascript:;"   @click="removeArr(index)">X</a>
+          <li>{{items[3].zhu}} VS {{items[3].ke}}</li>
+          <li>{{items[5]}} @ <span class="odds">{{items[4]}}</span></li>
         </ul>
         <div class="remark">
           <p>自动接受最新赔率</p>
-          <p>最低限额：</p>
-          <p>单注限额：</p>
+          <p>最低限额：{{lowest}}</p>
+          <p>单注限额：{{singleNote}}</p>
         </div>
       </div>
 
@@ -65,7 +62,10 @@
         amount: '',
         winAmount: '',
         limit: 20,
-        suInfo: ''
+        suInfo: '',
+        lowest:10000,
+        singleNote:20000,
+        peiLv:''
       }
     },
     watch: {
@@ -78,10 +78,14 @@
         if (this.$store.state.sportArr.length !== 0) {
           let sum = 1;
           this.$store.state.sportArr.forEach((v, i) => {
-            if (v[7].indexOf('独赢') !== -1 || v[7].indexOf('和局') !== -1 || v[7].indexOf('单双') !== -1) {
+            if(v[7]){
+              if (v[7].indexOf('独赢') !== -1 || v[7].indexOf('和局') !== -1 || v[7].indexOf('单双') !== -1) {
 
-              sum *= (v[4] - 0)
-            } else {
+                sum *= (v[4] - 0);
+                this.peiLv=sum;
+              }
+            }
+             else {
               sum *= (v[4] - 0 + 1);
             }
           });
@@ -110,57 +114,64 @@
           alert('交易金额最少为 ' + _self.limit);
           return
         }
-        let data = {};
-        let event = [],
-          typename = [],
-          match_id_in = [],
-          peiLv = [],
-          point_column = [];
-        if (type === '0') {
-          typename.push($store.state.betData.typeName);
-          match_id_in.push($store.state.betData.match_id_in);
-          peiLv.push($store.state.betData.peiLv);
-          event.push($store.state.betData.event);
-          point_column.push($store.state.betData.point_column);
-          data.touzhutype = '0';
-          data.bet_money = _self.amount;
-          data.ball_sort = typename;
-          data.match_id = match_id_in;
-          data.bet_point = peiLv;
-          data.match_name = event;
-          data.point_column = point_column;
-        }
-        else {
-          data.touzhutype = '1';
-
-          for (let i = 0; i < _self.$store.state.sportArr.length; i++) {
-            event.push(_self.$store.state.sportArr[i][0]);
-            typename.push(_self.$store.state.sportArr[i][1]);
-            match_id_in.push(_self.$store.state.sportArr[i][2]);
-            peiLv.push(_self.$store.state.sportArr[i][4]);
-            point_column.push(_self.$store.state.sportArr[i][6])
+        if(confirm('可赢金额为'+_self.winAmount+',确定交易吗')
+        ){
+          let data = {};
+          let event = [],
+            typename = [],
+            match_id_in = [],
+            peiLv = [],
+            point_column = [];
+          if (type === '0') {
+            typename.push($store.state.betData.typeName);
+            match_id_in.push($store.state.betData.match_id_in);
+            peiLv.push($store.state.betData.peiLv);
+            event.push($store.state.betData.event);
+            point_column.push($store.state.betData.point_column);
+            data.touzhutype = '0';
+            data.bet_money = _self.amount;
+            data.ball_sort = typename;
+            data.match_id = match_id_in;
+            data.bet_point = peiLv;
+            data.match_name = event;
+            data.point_column = point_column;
           }
-          data.bet_money = this.amount;
-          data.ball_sort = typename;
-          data.match_id = match_id_in;
-          data.bet_point = peiLv;
-          data.match_name = event;
-          data.point_column = point_column;
-        }
-        axios.post('../api/app/member/bet.php', data
-        ).then(function (res) {
-          _self.amount = '';
-          _self.$store.state.BetSwitch = false;
-          _self.$store.state.sportArr = [];
-          _self.sportArr1 = [];
-          if (res.status === 200 && res.data.code === 0) {
-            _self.userMoney = res.data.data.money;
-            _self.suInfo = res.data.msg;
-          }
+          else {
+            data.touzhutype = '1';
 
-        }).catch(function (err) {
-          throw err
-        })
+            for (let i = 0; i < _self.$store.state.sportArr.length; i++) {
+              event.push(_self.$store.state.sportArr[i][0]);
+              typename.push(_self.$store.state.sportArr[i][1]);
+              match_id_in.push(_self.$store.state.sportArr[i][2]);
+              peiLv.push(_self.$store.state.sportArr[i][4]);
+              point_column.push(_self.$store.state.sportArr[i][6])
+            }
+            data.bet_money = this.amount;
+            data.ball_sort = typename;
+            data.match_id = match_id_in;
+            data.bet_point = peiLv;
+            data.match_name = event;
+            data.point_column = point_column;
+          }
+          axios.post('../api/app/member/bet.php', data
+          ).then(function (res) {
+            _self.amount = '';
+            _self.$store.state.betShow = false;
+            _self.$store.state.sportArr = [];
+            _self.sportArr1 = [];
+            if (res.status === 200 && res.data.code === 0) {
+              _self.userMoney = res.data.data.money;
+              _self.suInfo = res.data.msg;
+            }
+
+          }).catch(function (err) {
+            throw err
+          })
+        }else {
+            _self.amount='';
+            return false
+        }
+
       },
       removeArr: function (index) {
         this.$store.state.sportArr.splice(index, 1);
