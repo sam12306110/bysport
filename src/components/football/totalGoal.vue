@@ -1,20 +1,18 @@
 <template>
   <div>
     <div id="sportwrapbox">
-
       <div class="tbox">
-        <div class="sporttop"><h1>今日足球 &gt; 入球数</h1></div>
+        <div class="sporttop"><h1>{{showType}} &gt; 入球数</h1></div>
         <div class="tbox_content">
           <dl>
             <dt>
-              <span id="pg_txt"><span class="pageBar">共 16 条</span></span>
+              <pagination :pageInfo="pageInfo" :soPage="soPage" @change="pageChange"></pagination>
             </dt>
             <dd class="refresh">
-              <a href="javascript:;" onclick="reloadList()"><span id="djs">5</span></a>
+              <a href="javascript:;" @click="clickRef('180')" ><span id="djs">{{time}}</span></a>
             </dd>
             <dd>
-              <a href="#TB_inline?height=400&amp;width=660&amp;inlineId=leagueBox" title="选择联赛"
-                 class="thickbox">选择联赛(全)</a>
+              <a  title="选择联赛" class="thickbox" href="javascript:;" @click="comShowModel('op')">选择联赛(全)</a>
             </dd>
           </dl>
           <table border="1" cellpadding="0" cellspacing="0" id="data">
@@ -72,23 +70,34 @@
           </table>
         </div>
       </div>
-      <div id="refresh_down" class="refresh_M_btn" onclick="this.className='refresh_M_on';javascript:refload();"><span>刷新</span>
+      <div id="refresh_down" class="refresh_M_btn" @click="clickRef('180')" ><span>刷新</span>
       </div>
     </div>
+    <model :windowLsm="windowLsm" :modelData="modelData" @modelClose="getChild"></model>
   </div>
 </template>
 <script>
   import Mixin from '@/Mixin'
-
+  import pagination from '../../components/vue-pagination'
+  import model from '../../components/model'
   export default {
     name: 'totalGoal',
     mixins: [Mixin],
-    components: {},
+    components: {
+      pagination,
+      model
+    },
     data: function () {
       return {
-        action: '../api/app/member/show/json/ft_1_2.php',
-        showType: '总入球',
-        time: 121,
+        action: '../api/app/member/show/json/ft_2_2.php',
+        showType: '足球早盘',
+        time: 180,
+        pageInfo: {
+          current: 1,
+          pagegroup: 5,
+          skin: '#86715',
+        },
+        eventName:''
       }
     },
     created: function () {
@@ -96,9 +105,34 @@
     },
     mounted: function () {
       let _self = this;
-      _self.getData()
+      _self.dataType=window.sessionStorage.getItem('dataType');
+      if(_self.dataType==2){
+        _self.action= '../api/app/member/show/json/ft_2_2.php';
+        this.showType='足球早盘'
+      }
+      if(_self.dataType==1){
+        _self.action= '../api/app/member/show/json/ft_1_2.php';
+        this.showType='今日足球'
+      }
+      if (_self.time > 1) {
+        clearInterval(_self.timer());
+        _self.time = '';
+        _self.timer('180')
+      } else {
+        _self.timer('180')
+      }
     },
-    methods: {}
+    methods: {
+      pageChange: function (current) {
+        this.getData('',current-1)
+      },
+      getChild: function (data) {
+        let _self = this;
+        _self.modelData = data;
+        _self.eventName = _self.modelData.selectData;
+        _self.getData(_self.modelData.selectData, '0');
+      },
+    }
   }
 
 </script>

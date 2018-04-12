@@ -160,7 +160,6 @@
     data: function () {
       return {
         action: '../api/app/member/show/json/ft_2_1.php',
-        showType: '早餐',
         time: 90,
         pageInfo: {
           current: 1,

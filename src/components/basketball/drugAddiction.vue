@@ -3,17 +3,17 @@
       <div id="sportwrapbox">
 
         <div class="tbox">
-          <div class="sporttop"><h1>篮球 &gt; 单式</h1></div>
+          <div class="sporttop"><h1>{{showType}} &gt; 单式</h1></div>
           <div class="tbox_content">
             <dl>
               <dt>
-                <span id="pg_txt"><span class="pageBar">共 34 条</span></span>
+                <pagination :pageInfo="pageInfo" :soPage="soPage" @change="pageChange"></pagination>
               </dt>
               <dd class="refresh">
-                <a href="javascript:;" onclick="reloadList()"><span id="djs">82</span></a>
+                <a href="javascript:;" @click="clickRef('90')"><span id="djs">{{time}}</span></a>
               </dd>
               <dd>
-                <a title="选择联赛" class="thickbox">选择联赛(全)</a>
+                <a title="选择联赛" class="thickbox" @click="comShowModel('op')" href="javascript:;">选择联赛(全)</a>
               </dd>
             </dl>
             <table border="1" cellpadding="0" cellspacing="0" id="data">
@@ -79,31 +79,70 @@
             </table>
           </div>
         </div>
-        <div id="refresh_down" class="refresh_M_btn" >
+        <div id="refresh_down" class="refresh_M_btn" @click="clickRef('90')" >
           <span>刷新</span>
         </div>
       </div>
+      <model :windowLsm="windowLsm" :modelData="modelData" @modelClose="getChild"></model>
     </div>
 </template>
 <script>
     import Mixin from '@/Mixin'
-
+    import pagination from '../../components/vue-pagination'
+    import model from '../../components/model'
     export default {
         name: 'drugAddiction',
         mixins: [Mixin],
-        components: {},
+        components: {
+          pagination,
+          model
+        },
         data: function () {
             return {
-              action:'../api/app/member/show/json/bk_1_1.php',
+              action:'../api/app/member/show/json/bk_2_1.php',
+              showType:'篮球早盘',
+              pageInfo: {
+                current: 1,
+                pagegroup: 5,
+                skin: '#86715',
+              },
+              eventName:'',
+              time:90
             }
         },
         created: function () {
 
         },
         mounted: function () {
-          this.getData()
+          let _self=this;
+          _self.dataType = window.sessionStorage.getItem('dataType');
+          if (_self.dataType == 2) {
+            _self.action = '../api/app/member/show/json/bk_2_1.php';
+            this.showType = '篮球早盘'
+          }
+          if (_self.dataType == 1) {
+            _self.action = '../api/app/member/show/json/bk_1_1.php';
+            this.showType = '今日篮球'
+          }
+          if (_self.time > 1) {
+            clearInterval(_self.timer());
+            _self.time = '';
+            _self.timer('90')
+          } else {
+            _self.timer('90')
+          }
         },
-        methods: {}
+        methods: {
+          pageChange: function (current) {
+            this.getData('', current - 1)
+          },
+          getChild: function (data) {
+            let _self = this;
+            _self.modelData = data;
+            _self.eventName = _self.modelData.selectData;
+            _self.getData(_self.modelData.selectData, '0');
+          },
+        }
     }
 
 </script>

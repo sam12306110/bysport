@@ -112,8 +112,8 @@ let MyMixin = {
             case '180':
               _self.time = 180;
               break;
-            case '999':
-              _self.time = 999;
+            case '120':
+              _self.time = 120;
               break;
             case '20':
               _self.time = 20;
@@ -135,8 +135,8 @@ let MyMixin = {
         case '180':
           _self.time = 180;
           break;
-        case '999':
-          _self.time = 999;
+        case '120':
+          _self.time = 120;
           break;
         case '20':
           _self.time = 20;
@@ -146,7 +146,6 @@ let MyMixin = {
     comShowModel: function (type) {
       if (type === 'op') {
         this.modelData.showBg = true;
-        console.log(this.modelData.showBg)
       }
       if (type === 'cl') {
         this.modelData.showBg = false;

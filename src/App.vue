@@ -272,7 +272,7 @@
     created: function () {
       let _self = this;
       _self.nowTime = _self.CurentTime();
-      $router.push('/')
+      $router.push('/todayBall')
     },
     mounted: function () {
 
@@ -290,12 +290,14 @@
             _self.menuBg = 'jr';
             window.sessionStorage.setItem('dataType', 1);
             _self.selectBg='FT';
-            $router.push('/');
+            $router.push('/todayBall');
+
             break;
           case 'zp' :
             _self.menuBg = 'zp';
             window.sessionStorage.setItem('dataType', 2);
             _self.selectBg='FT';
+            $router.push('/');
             break;
         }
       },

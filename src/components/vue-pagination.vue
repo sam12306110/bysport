@@ -7,7 +7,7 @@
                 <a href="javascript:;" v-if="pageInfo.current == p.val" :style="{backgroundColor:pageInfo.skin , borderColor:pageInfo.skin}" @click="clickCurrent(p.val)"> {{ p.text }} </a>
                 <a href="javascript:;" v-else  @click="clickCurrent(p.val)"> {{ p.text }} </a>
             </li>
-            <li v-if="setList.length!=0" :class="{'disabled': pageInfo.current == pageInfo.page}"><a href="javascript:;" @click="clickCurrent(pageInfo.current + 1)"> 下一页</a></li>
+            <li v-if="setList.length>1" :class="{'disabled': pageInfo.current == pageInfo.page}"><a href="javascript:;" @click="clickCurrent(pageInfo.current + 1)"> 下一页</a></li>
             <!--<li :class="{'disabled': pageInfo.current == pageInfo.page}"><a href="javascript:;" @click="clickCurrent(pageInfo.page)"> 尾页 </a></li>-->
         </ul>
     </section>
@@ -20,14 +20,14 @@ export default {
       setList:function(){
         let len = this.soPage , temp = [], list = [], count = Math.floor(this.pageInfo.pagegroup / 2) ,center = this.pageInfo.current;
         if( len <= this.pageInfo.pagegroup ){
-          while(len--){ temp.push({text:this.page-len,val:this.page-len});}
+          while(len--){ temp.push({text:this.soPage-len,val:this.soPage-len});}
           return temp;
 
         }
         while(len--){ temp.push(this.soPage - len);}
         let idx = temp.indexOf(center);
         (idx < count) && ( center = center + count - idx);
-        (this.pageInfo.current > this.page - count) && ( center = this.page - count);
+        (this.pageInfo.current > this.soPage - count) && ( center = this.soPage - count);
         temp = temp.splice(center - count -1, this.pageInfo.pagegroup);
         do {
           let t = temp.shift();
@@ -38,7 +38,7 @@ export default {
         }while(temp.length);
         if( this.soPage > this.pageInfo.pagegroup ){
           (this.pageInfo.current > count + 1) && list.unshift({ text:'...',val: list[0].val - 1 });
-          (this.pageInfo.current < this.page - count) && list.push({ text:'...',val: list[list.length - 1].val + 1 });
+          (this.pageInfo.current < this.soPage - count) && list.push({ text:'...',val: list[list.length - 1].val + 1 });
         }
 
         return list;

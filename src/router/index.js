@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import single from '@/components/football/single'
+import todayBall from '@/components/football/todayBall'
 import waves  from '@/components/football/waves'
 import totalGoal from '@/components/football/totalGoal'
 import fullField from '@/components/football/fullField'
@@ -17,6 +18,11 @@ export default new Router({
       path: '/',
       name: 'single',
       component: single
+    },
+    {
+      path: '/todayBall',
+      name: 'todayBall',
+      component: todayBall
     },
     {
       path: '/waves',

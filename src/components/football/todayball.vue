@@ -1,20 +1,18 @@
 <template>
   <div>
     <div id="sportwrapbox">
-
       <div class="tbox">
-        <div class="sporttop"><h1>{{showType}} &gt; 综合过关</h1></div>
+        <div class="sporttop"><h1>今日足球 &gt; 单式</h1></div>
         <div class="tbox_content">
           <dl>
             <dt>
               <pagination :pageInfo="pageInfo" :soPage="soPage" @change="pageChange"></pagination>
             </dt>
             <dd class="refresh">
-              <a href="javascript:;" @click="clickRef('180')"><span id="djs">{{time}}</span></a>
+              <a href="javascript:;" @click="clickRef('90')"><span id="djs">{{time}}</span></a>
             </dd>
             <dd>
-              <a href="javascript:;" @click="comShowModel('op')" title="选择联赛"
-                 class="thickbox">选择联赛(全)</a>
+              <a href="javascript:;" @click="comShowModel('op')" title="选择联赛" class="thickbox">选择联赛</a>
             </dd>
           </dl>
           <table border="1" cellpadding="0" cellspacing="0" id="data">
@@ -34,8 +32,7 @@
               <td colspan="9">
                 <table frame="void" cellpadding="0" cellspacing="0" v-for="(item,key) in race" id="stf">
                   <tr>
-                    <td colspan="8" class="b_title" style="border-bottom:none">{{key}}</td>
-                    <td align="right" class="b_title2" style="border-left:none;border-bottom:none">3串1</td>
+                    <td colspan="9" class="b_title" style="border-top:none;border-bottom:none">{{key}}</td>
                   </tr>
                   <tbody v-for="items in item">
                   <tr>
@@ -133,9 +130,6 @@
                     </td>
                     <td colspan="2" class="b_1st"></td>
                   </tr>
-                  <tr>
-                    <td colspan="10" class="space"></td>
-                  </tr>
                   </tbody>
                 </table>
               </td>
@@ -144,18 +138,20 @@
           </table>
         </div>
       </div>
-      <div id="refresh_down" class="refresh_M_btn" @click="clickRef('180')" ><span>刷新</span>
+      <div id="refresh_down" class="refresh_M_btn" @click="clickRef('90')">
+        <span>刷新</span>
       </div>
-      <model :windowLsm="windowLsm" :modelData="modelData" @modelClose="getChild"></model>
     </div>
+    <model :windowLsm="windowLsm" :modelData="modelData" @modelClose="getChild"></model>
   </div>
 </template>
 <script>
   import Mixin from '@/Mixin'
   import pagination from '../../components/vue-pagination'
   import model from '../../components/model'
+
   export default {
-    name: 'Comprehensive',
+    name: 'todayBall',
     mixins: [Mixin],
     components: {
       pagination,
@@ -163,15 +159,15 @@
     },
     data: function () {
       return {
-        action: '../api/app/member/show/json/ft_2_1.php',
-        showType: '足球早盘',
-        time: 180,
+        action: '../api/app/member/show/json/ft_1_1.php',
+        showType: '早餐',
+        time: 90,
         pageInfo: {
           current: 1,
           pagegroup: 5,
           skin: '#86715',
         },
-        eventName: ''
+        eventName:''
       }
     },
     created: function () {
@@ -179,26 +175,18 @@
     },
     mounted: function () {
       let _self = this;
-      _self.dataType = window.sessionStorage.getItem('dataType');
-      if (_self.dataType == 2) {
-        _self.action = '../api/app/member/show/json/ft_2_3.php';
-        this.showType = '足球早盘'
-      }
-      if (_self.dataType == 1) {
-        _self.action = '../api/app/member/show/json/ft_1_3.php';
-        this.showType = '今日足球'
-      }
       if (_self.time > 1) {
         clearInterval(_self.timer());
         _self.time = '';
-        _self.timer('180')
+        _self.timer('90')
       } else {
-        _self.timer('180')
+        _self.timer('90')
       }
+
     },
     methods: {
       pageChange: function (current) {
-        this.getData('', current - 1)
+        this.getData('',current-1)
       },
       getChild: function (data) {
         let _self = this;
@@ -208,5 +196,4 @@
       },
     }
   }
-
 </script>
