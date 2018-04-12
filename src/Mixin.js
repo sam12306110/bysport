@@ -13,6 +13,8 @@ let MyMixin = {
         showBg: false,
         selectData: '',
       },
+      sportArr1: [],
+      animation: true
     }
   },
   computed: {},

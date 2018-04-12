@@ -45,56 +45,47 @@
                       {{items.Match_Guest}}
                     </td>
                     <td width="60px">
-                      <a @click="ClickBet('足球单式','半全场-主/主',items.Match_ID,'Match_BqMM','0','0','主/主')"
-                         v-if="items.Match_BqMM!=null&&items.Match_BqMM!='0'" href="javascript:;">
+                      <a @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},'主/主',items.Match_BqMM,'0','Match_BqMM')" v-if="items.Match_BqMM!=null&&items.Match_BqMM!='0'" href="javascript:;">
                         {{items.Match_BqMM}}
                       </a>
                     </td>
                     <td width="55px">
-                      <a @click="ClickBet('足球单式','半全场-主/和',items.Match_ID,'Match_BqMH','0','0','主/和')"
-                         v-if="items.Match_BqMH!=null&&items.Match_BqMH!='0'" href="javascript:;">
+                      <a @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},'主/和',items.Match_BqMH,'0','Match_BqMH')" v-if="items.Match_BqMH!=null&&items.Match_BqMH!='0'" href="javascript:;">
                         {{items.Match_BqMH}}
                       </a>
                     </td>
                     <td width="54px">
-                      <a @click="ClickBet('足球单式','半全场-主/客',items.Match_ID,'Match_BqMG','0','0','主/客')"
-                         v-if="items.Match_BqMG!=null&&items.Match_BqMG!='0'" href="javascript:;">
+                      <a @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},'主/客',items.Match_BqMG,'0','Match_BqMG')" v-if="items.Match_BqMG!=null&&items.Match_BqMG!='0'" href="javascript:;">
                         {{items.Match_BqMG}}
                       </a>
                     </td>
                     <td width="55px">
-                      <a @click="ClickBet('足球单式','半全场-和/主',items.Match_ID,'Match_BqHM','0','0','和/主')"
-                         v-if="items.Match_BqHM!=null&&items.Match_BqHM!='0'" href="javascript:;">
-                        {{items.Match_BqHM}}
-                      </a>
+                    <a @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},'和/主',items.Match_BqHM,'0','Match_BqHM')" v-if="items.Match_BqHM!=null&&items.Match_BqHM!='0'" href="javascript:;">
+                      {{items.Match_BqHM}}
+                    </a>
+                      </td>
+                    <td width="55px">
+                    <a @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},'和/和',items.Match_BqHH,'0','Match_BqHH')" v-if="items.Match_BqHH!=null&&items.Match_BqHH!='0'" href="javascript:;">
+                      {{items.Match_BqHH}}
+                    </a>
                     </td>
                     <td width="55px">
-                      <a @click="ClickBet('足球单式','半全场-和/和',items.Match_ID,'Match_BqHH','0','0','和/和')"
-                         v-if="items.Match_BqHH!=null&&items.Match_BqHH!='0'" href="javascript:;">
-                        {{items.Match_BqHH}}
-                      </a>
-                    </td>
-                    <td width="55px">
-                      <a @click="ClickBet('足球单式','半全场-和/客',items.Match_ID,'Match_BqHG','0','0','和/客')"
-                         v-if="items.Match_BqHG!=null&&items.Match_BqHG!='0'" href="javascript:;">
+                      <a @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},'和/客',items.Match_BqHG,'0','Match_BqHG')" v-if="items.Match_BqHG!=null&&items.Match_BqHG!='0'" href="javascript:;">
                         {{items.Match_BqHG}}
                       </a>
                     </td>
                     <td width="55px">
-                      <a @click="ClickBet('足球单式','半全场-客/主',items.Match_ID,'Match_BqGM','0','0','客/主')"
-                         v-if="items.Match_BqGM!=null&&items.Match_BqGM!='0'" href="javascript:;">
+                      <a @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},'客/主',items.Match_BqGM,'0','Match_BqGM')" v-if="items.Match_BqGM!=null&&items.Match_BqGM!='0'" href="javascript:;">
                         {{items.Match_BqGM}}
                       </a>
                     </td>
                     <td width="55px">
-                      <a @click="ClickBet('足球单式','半全场-客/和',items.Match_ID,'Match_BqGH','0','0','客/和')"
-                         v-if="items.Match_BqGH!=null&&items.Match_BqGH!='0'" href="javascript:;">
+                      <a @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},'客/和',items.Match_BqGH,'0','Match_BqGH')" v-if="items.Match_BqGH!=null&&items.Match_BqGH!='0'" href="javascript:;">
                         {{items.Match_BqGH}}
                       </a>
                     </td>
                     <td width="54px">
-                      <a @click="ClickBet('足球单式','半全场-客/客',items.Match_ID,'Match_BqGG','0','0','客/客')"
-                         v-if="items.Match_BqGG!=null&&items.Match_BqGG!='0'" href="javascript:;">
+                      <a @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},'客/客',items.Match_BqGG,'0','Match_BqGG')" v-if="items.Match_BqGG!=null&&items.Match_BqGG!='0'" href="javascript:;">
                         {{items.Match_BqGG}}
                       </a>
                     </td>

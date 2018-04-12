@@ -6,138 +6,212 @@
           <div class="tbox_content">
             <dl>
               <dt>
-                <span id="pg_txt"><span class="pageBar">共 2 条</span></span>
+                <pagination :pageInfo="pageInfo" :soPage="soPage" @change="pageChange"></pagination>
               </dt>
               <dd class="refresh">
-                <a href="javascript:;" onclick="reloadList()"><span id="djs">46</span></a>
+                <a href="javascript:;" @click="clickRef('20')"><span id="djs">{{time}}</span></a>
               </dd>
               <dd>
-                <a href="#TB_inline?height=400&amp;width=660&amp;inlineId=leagueBox" title="选择联赛" class="thickbox">选择联赛(全)</a>
+                <a  title="选择联赛" href="javascript:;" @click="comShowModel('op')" class="thickbox">选择联赛(全)</a>
               </dd>
             </dl>
             <table border="1" cellpadding="0" cellspacing="0" id="data">
               <tbody>
               <tr class="datatop">
-                <th nowrap="" class="time">时间</th>
-                <th nowrap="" class="team">赛事</th>
-                <th nowrap="" class="h_1x2">独赢</th>
-                <th nowrap="" class="h_r">全场 - 让球</th>
-                <th nowrap="" class="h_ou">全场 - 大小</th>
-                <th nowrap="" class="h_oe">单双</th>
-                <th nowrap="" class="h_1x2">独赢</th>
-                <th nowrap="" class="h_r">半场 - 让球</th>
-                <th nowrap="" class="h_ou">半场 - 大小</th>
-              </tr>
-              <tr><td colspan="9" class="b_title">哈萨克斯坦杯</td></tr>                    <tr class="b_cen">
-                <td rowspan="3">
-                  <div class="bf">半场'<br><span>0 - 3</span></div>
-                </td>
-                <td rowspan="2" align="left">
-                  埃基巴斯图兹 <font color="blue">[中]</font>                            <br>
-                  阿勒泰瑟美                        </td>
-                <td>&nbsp;</td>
-                <td class="b_1st_R"><a href="javascript:" onclick="parent.orderFrame.selectMatch(&quot;3140802&quot;,&quot;ft&quot;,&quot;gq&quot;,&quot;rq_h&quot;)" title="埃基巴斯图兹 [中]"><font>0.88</font></a></td>
-                <td>
-                  <span class="qiu">大4.5</span>
-                  <a href="javascript:" onclick="parent.orderFrame.selectMatch(&quot;3140802&quot;,&quot;ft&quot;,&quot;gq&quot;,&quot;dx_h&quot;)" title="大"><font>0.90</font></a></td>
-                <td></td>
-                <td class="b_1st">&nbsp;</td>
-                <td class="b_1st_R">&nbsp;</td>
-                <td class="b_1st">
-                  <span class="qiu"></span>
-                  &nbsp;</td>
-              </tr>
-              <tr class="b_cen">
-                <td>&nbsp;</td>
-                <td align="right"><span class="qiu">0.5</span><a href="javascript:" onclick="parent.orderFrame.selectMatch(&quot;3140802&quot;,&quot;ft&quot;,&quot;gq&quot;,&quot;rq_c&quot;)" title="阿勒泰瑟美"><font>0.96</font></a></td>
-                <td>
-                  <span class="qiu">小4.5</span>
-                  <a href="javascript:" onclick="parent.orderFrame.selectMatch(&quot;3140802&quot;,&quot;ft&quot;,&quot;gq&quot;,&quot;dx_c&quot;)" title="小"><font>0.92</font></a></td>
-                <td></td>
-                <td class="b_1st">&nbsp;</td>
-                <td class="b_1st_R">&nbsp;</td>
-                <td class="b_1st">
-                  <span class="qiu"></span>
-                  &nbsp;</td>
-              </tr>
-              <tr class="b_cen">
-                <td align="left">和局</td>
-                <td>&nbsp;</td>
-                <td colspan="3"></td>
-                <td class="b_1st">&nbsp;</td>
-                <td class="b_1st" colspan="2"></td>
+                <th nowrap="" style="width: 75px" class="time">时间</th>
+                <th nowrap="" style="width: 155px" class="team">赛事</th>
+                <th nowrap="" class="h_1x2" style="width: 43px;">独赢</th>
+                <th nowrap="" class="h_r" style="width: 97px;">全场 - 让球</th>
+                <th nowrap="" class="h_ou" style="width: 93px;">全场 - 大小</th>
+                <th nowrap="" class="h_oe" style="width: 48px;">单双</th>
+                <th nowrap="" class="h_1x2" style="width: 36px;">独赢</th>
+                <th nowrap="" class="h_r" style="width: 91px;">半场 - 让球</th>
+                <th nowrap="" class="h_ou" style="width: 88px;">半场 - 大小</th>
               </tr>
               <tr>
-                <td colspan="10" class="space"></td>
-              </tr>
-              <tr class="b_cen">
-                <td rowspan="3">
-                  <div class="bf">半场'<br><span>0 - 3</span></div>
+                <td colspan="9">
+                  <table frame="void" cellpadding="0" cellspacing="0" v-for="(item,key) in race" id="stf">
+                    <tr>
+                      <td colspan="9" class="b_title" style="border-top:none;border-bottom:none">{{key}}</td>
+                    </tr>
+                    <tbody v-for="items in item">
+                    <tr>
+                      <td rowspan="3">
+                        <div class="bf">{{items.Match_Time}}<br><span>{{items.Match_NowScore}}</span></div>
+                      </td>
+                      <td rowspan="2" align="left" style="width: 160px;">
+                        {{items.Match_Master}}<br>{{items.Match_Guest}}
+                      </td>
+                      <td align="right" style="width: 38px;">
+                        <a href="javascript:" :title="items.Match_BzM"
+                           @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Master,items.Match_BzM,'0','Match_BzM')" v-if="items.Match_BzM!=null&&items.Match_BzM!='0'">
+                          <font>{{items.Match_BzM}}</font>
+                        </a>
+                      </td>
+                      <td align="right" style="width: 93px;">
+                      <span class="qiu"
+                            v-if="items.Match_Ho!=null&&items.Match_Ho!='0'">{{items.Match_ShowType == 'H' && items.Match_Ho != '0' ? items.Match_RGG : ''}}</span>
+                        <a href="javascript:"
+                           @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Master,items.Match_Ho,'0','Match_Ho','盘口: '+(items.Match_ShowType=='H' ? '主让' :'客让')+'('+items.Match_RGG+')')"  v-if="items.Match_Ho!=null&&items.Match_Ho!='0'">
+                          <font>{{items.Match_Ho}}</font></a>
+                      </td>
+                      <td align="right" style="width: 93px;">
+                      <span class="qiu"
+                            v-if="items.Match_DxDpl!=null&&items.Match_DxDpl!='0'">{{items.Match_DxGG1}}</span>
+                        <a href="javascript:" title="大"
+                           @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_DxGG1,items.Match_DxDpl,'0','Match_DxDpl')"  v-if="items.Match_DxDpl!=null&&items.Match_DxDpl!='0'">
+                          <font>{{items.Match_DxDpl}}</font></a>
+                      </td>
+                      <td style="width: 49px;" align="right">
+                        <span class="qiu" v-if="items.Match_DsDpl!=null&&items.Match_DsDpl!='0'">单</span>
+                        <a href="javascript:" title="单"
+                           @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},'单',items.Match_DsDpl,'0','Match_DsDpl')"  v-if="items.Match_DsDpl!=null&&items.Match_DsDpl!='0'">
+                          <font>{{items.Match_DsDpl}}</font></a>
+                      </td>
+                      <td style="width: 36px;" align="right" class="b_1st">
+                        <a href="javascript:"
+                           v-if="items.Match_Bmdy!=null&&items.Match_Bmdy!='0'" @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Master+'-[上半]',items.Match_Bmdy,'0','Match_Bmdy')">
+                          <font>{{items.Match_Bmdy}}</font></a>
+                      </td>
+                      <td style="width: 91px;" align="right" class="b_1st_R">
+                      <span class="qiu"
+                            v-if="items.Match_BHo!=null&&items.Match_BHo!='0'">{{items.Match_ShowType == 'H' && items.Match_Ho != '0' ? items.Match_RGG : ''}}</span>
+                        <a href="javascript:"
+                           v-if="items.Match_BHo!=null&&items.Match_BHo!='0'" @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Master,items.Match_BHo,'0','Match_BHo','盘口: '+(items.Match_Hr_ShowType=='H'?'主让':'客让')+'('+items.Match_RGG+')')">
+                          <font>{{items.Match_BHo}}</font></a>
+                      </td>
+                      <td style="width: 88px;" align="right" class="b_1st">
+                      <span class="qiu"
+                            v-if="items.Match_Bdpl!=null&&items.Match_Bdpl!='0'">{{items.Match_Bdxpk1}}</span>
+                        <a href="javascript:" title="大"
+                           v-if="items.Match_Bdpl!=null&&items.Match_Bdpl!='0'" @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Bdxpk1.replace('@',''),items.Match_Bdpl,'0','Match_Bdpl')">
+                          <font>{{items.Match_Bdpl}}</font></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="right">
+                        <a @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Guest,items.Match_BzG,'0','Match_BzG')"
+                           href="javascript:" :title="items.Match_BzG" v-if="items.Match_BzG!=null&&items.Match_BzG!='0'">
+                          <font>{{items.Match_BzG}}</font>
+                        </a>
+                      </td>
+                      <td align="right">
+                      <span class="qiu"
+                            v-if="items.Match_Ao!=null&&items.Match_Ao!='0'">{{items.Match_ShowType == 'C' && items.Match_Ao != '0' ? items.Match_RGG : ''}}</span>
+                        <a href="javascript:"
+                           @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Guest,items.Match_Ao,'0','Match_Ao','盘口: '+(items.Match_ShowType=='H' ? '主让' :'客让')+'('+items.Match_RGG+')')" v-if="items.Match_Ao!=null&&items.Match_Ao!='0'">
+                          <font>{{items.Match_Ao}}</font></a>
+                      </td>
+                      <td align="right">
+                      <span class="qiu"
+                            v-if="items.Match_DxXpl!=null&&items.Match_DxXpl!='0'">{{items.Match_DxGG2}}</span>
+                        <a href="javascript:" title="小"
+                           @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_DxGG2,items.Match_DxXpl,'0','Match_DxXpl')"  v-if="items.Match_DxXpl!=null&&items.Match_DxXpl!='0'">
+                          <font>{{items.Match_DxXpl}}</font></a>
+                      </td>
+                      <td align="right">
+                        <span class="qiu" v-if="items.Match_DsDpl!=null&&items.Match_DsDpl!='0'">双</span>
+                        <a href="javascript:" title="双"
+                           v-if="items.Match_DsSpl!=null&&items.Match_DsSpl!='0'" @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},'双',items.Match_DsSpl,'0','Match_DsDpl')">
+                          <font>{{items.Match_DsSpl}}</font></a>
+                      </td>
+                      <td align="right" class="b_1st">
+                        <a href="javascript:"
+                           v-if="items.Match_Bgdy1!=null&&items.Match_Bgdy1!='0'" @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Guest+'-[上半]',items.Match_Bgdy1,'0','Match_Bgdy1')">
+                          <font>{{items.Match_Bgdy1}}</font></a>
+                      </td>
+                      <td align="right" class="b_1st_R">
+                      <span class="qiu"
+                            v-if="items.Match_BAo!=null&&items.Match_BAo!='0'">{{items.Match_ShowType == 'C' && items.Match_Ao != '0' ? items.Match_RGG : ''}}</span>
+                        <a href="javascript:"
+                           v-if="items.Match_BAo!=null&&items.Match_BAo!='0'" @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Guest,items.Match_BAo,'0','Match_BAo','盘口: '+(items.Match_Hr_ShowType=='H'?'主让':'客让')+'('+items.Match_RGG+')')">
+                          <font>{{items.Match_BAo}}</font></a>
+                      </td>
+                      <td align="right" class="b_1st">
+                      <span class="qiu"
+                            v-if="items.Match_Bdpl!=null&&items.Match_Bdpl!='0'">{{items.Match_Bdxpk2}}</span>
+                        <a href="javascript:" title="小"
+                           v-if="items.Match_Bdpl!=null&&items.Match_Bdpl!='0'" @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Bdxpk2.replace('@',''),items.Match_Bxpl,'0','Match_Bxpl')">
+                          <font>{{items.Match_Bxpl}}</font></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="left">和局</td>
+                      <td align="right">
+                        <a href="javascript:" title="和局"
+                           v-if="items.Match_BzH!=null&&items.Match_BzH!='0'" @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},'和局',items.Match_BzH,'0','Match_BzH')">
+                          <font>{{items.Match_BzH}}</font>
+                        </a>
+                      </td>
+                      <td colspan="3"></td>
+                      <td align="right" class="b_1st">
+                        <a href="javascript:" title="和局"
+                           v-if="items.Match_Bhdy1!=null&&items.Match_Bhdy1!='0'" @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},'和局',items.Match_Bhdy1,'0','Match_Bhdy1')">
+                          <font>{{items.Match_Bhdy1}}</font></a>
+                      </td>
+                      <td colspan="2" class="b_1st"></td>
+                    </tr>
+                    </tbody>
+                  </table>
                 </td>
-                <td rowspan="2" align="left">
-                  埃基巴斯图兹 <font color="blue">[中]</font>                            <br>
-                  阿勒泰瑟美                        </td>
-                <td>&nbsp;</td>
-                <td class="b_1st_R"><a href="javascript:" onclick="parent.orderFrame.selectMatch(&quot;3140804&quot;,&quot;ft&quot;,&quot;gq&quot;,&quot;rq_h&quot;)" title="埃基巴斯图兹 [中]"><font>1.22</font></a></td>
-                <td>
-                  <span class="qiu">大4 / 4.5</span>
-                  <a href="javascript:" onclick="parent.orderFrame.selectMatch(&quot;3140804&quot;,&quot;ft&quot;,&quot;gq&quot;,&quot;dx_h&quot;)" title="大"><font>0.66</font></a></td>
-                <td></td>
-                <td class="b_1st">&nbsp;</td>
-                <td class="b_1st_R">&nbsp;</td>
-                <td class="b_1st">
-                  <span class="qiu"></span>
-                  &nbsp;</td>
-              </tr>
-              <tr class="b_cen">
-                <td>&nbsp;</td>
-                <td align="right"><span class="qiu">0 / 0.5</span><a href="javascript:" onclick="parent.orderFrame.selectMatch(&quot;3140804&quot;,&quot;ft&quot;,&quot;gq&quot;,&quot;rq_c&quot;)" title="阿勒泰瑟美"><font>0.66</font></a></td>
-                <td>
-                  <span class="qiu">小4 / 4.5</span>
-                  <a href="javascript:" onclick="parent.orderFrame.selectMatch(&quot;3140804&quot;,&quot;ft&quot;,&quot;gq&quot;,&quot;dx_c&quot;)" title="小"><font>1.19</font></a></td>
-                <td></td>
-                <td class="b_1st">&nbsp;</td>
-                <td class="b_1st_R">&nbsp;</td>
-                <td class="b_1st">
-                  <span class="qiu"></span>
-                  &nbsp;</td>
-              </tr>
-              <tr class="b_cen">
-                <td align="left">和局</td>
-                <td>&nbsp;</td>
-                <td colspan="3"></td>
-                <td class="b_1st">&nbsp;</td>
-                <td class="b_1st" colspan="2"></td>
-              </tr>
-              <tr>
-                <td colspan="10" class="space"></td>
               </tr>
               </tbody>
             </table>
           </div>
         </div>
 
-        <div id="refresh_down" class="refresh_M_btn" onclick="this.className='refresh_M_on';javascript:refload();"><span>刷新</span></div>
+        <div id="refresh_down" class="refresh_M_btn" @click="clickRef('20')"><span>刷新</span></div>
       </div>
+      <model :windowLsm="windowLsm" :modelData="modelData" @modelClose="getChild"></model>
     </div>
 </template>
 <script>
     import Mixin from '@/Mixin'
-
+    import pagination from '../../components/vue-pagination'
+    import model from '../../components/model'
     export default {
         name: 'rollBall',
         mixins: [Mixin],
-        components: {},
+        components: {
+          pagination,
+          model,
+        },
         data: function () {
-            return {}
+            return {
+              action: '../api/app/member/show/json/ft_1_0.php',
+              time: 20,
+              pageInfo: {
+                current: 1,
+                pagegroup: 5,
+                skin: '#86715',
+              },
+              eventName: ''
+            }
         },
         created: function () {
 
         },
         mounted: function () {
-
+          let _self = this;
+          if (_self.time > 1) {
+            clearInterval(_self.timer());
+            _self.time = '';
+            _self.timer('20')
+          } else {
+            _self.timer('20')
+          }
         },
-        methods: {}
+        methods: {
+          pageChange: function (current) {
+            this.getData('', current - 1)
+          },
+          getChild: function (data) {
+            let _self = this;
+            _self.modelData = data;
+            _self.eventName = _self.modelData.selectData;
+            _self.getData(_self.modelData.selectData, '0');
+          },
+        }
     }
 
 </script>

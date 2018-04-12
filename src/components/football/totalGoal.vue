@@ -39,26 +39,22 @@
                       {{items.Match_Guest}}
                     </td>
                     <td style="width: 78px">
-                      <a @click="ClickBet('足球单式','入球数-0~1',items.Match_ID,'Match_Total01Pl','0',0,'0~1')"
-                         v-if="items.Match_Total01Pl!=null&&items.Match_Total01Pl!='0'" href="javascript:;">
+                      <a @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},'0~1',items.Match_Total01Pl,'0','Match_Total01Pl')" v-if="items.Match_Total01Pl!=null&&items.Match_Total01Pl!='0'" href="javascript:;">
                         {{items.Match_Total01Pl}}
                       </a>
                     </td>
                     <td style="width: 76px">
-                      <a @click="ClickBet('足球单式','入球数-2~3',items.Match_ID,'Match_Total23Pl','0',0,'2~3')"
-                         v-if="items.Match_Total23Pl!=null&&items.Match_Total23Pl!='0'" href="javascript:;">
+                      <a @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},'2~3',items.Match_Total23Pl,'0','Match_Total23Pl')" v-if="items.Match_Total23Pl!=null&&items.Match_Total23Pl!='0'" href="javascript:;">
                         {{items.Match_Total23Pl}}
                       </a>
                     </td>
                     <td style="width: 76px">
-                      <a @click="ClickBet('足球单式','入球数-4~6',items.Match_ID,'Match_Total46Pl','0',0,'4~6')"
-                         v-if="items.Match_Total46Pl!=null&&items.Match_Total46Pl!='0'" href="javascript:;">
+                      <a @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},'4~6',items.Match_Total46Pl,'0','Match_Total46Pl')" v-if="items.Match_Total46Pl!=null&&items.Match_Total46Pl!='0'" href="javascript:;">
                         {{items.Match_Total46Pl}}
                       </a>
                     </td>
                     <td style="width: 76px">
-                      <a @click="ClickBet('足球单式','入球数-7UP',items.Match_ID,'Match_Total7upPl','0',0,'7UP')"
-                         v-if="items.Match_Total7upPl!=null&&items.Match_Total7upPl!='0'" href="javascript:;">
+                      <a @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},'7UP',items.Match_Total7upPl,'0','Match_Total7upPl')" v-if="items.Match_Total7upPl!=null&&items.Match_Total7upPl!='0'" href="javascript:;">
                         {{items.Match_Total7upPl}}
                       </a>
                     </td>

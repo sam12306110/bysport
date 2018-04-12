@@ -39,7 +39,7 @@
                     <td style="border-left:1px solid #C3C3C3;border-bottom:1px solid #C3C3C3 ; width: 35px" rowspan="3"
                         v-html="items.Match_Date">
                     </td>
-                    <td rowspan="2" align="left" style="width: 157px;">
+                    <td rowspan="2" align="left" style="width: 160px;">
                       {{items.Match_Master}}<br>{{items.Match_Guest}}
                     </td>
                     <td align="right" style="width: 38px;">

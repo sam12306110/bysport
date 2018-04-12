@@ -168,7 +168,7 @@
                   点击赔率便可将<br>选项加到交易单里。
                 </font>
               </div>
-              <Bet :userMoney="userMoney"></Bet>
+              <Bet :userMy="userMoney"></Bet>
             </div>
             <div v-if="checkRecord=='sr'" id="rec5_div" >
               <div id="orderBox">

@@ -50,75 +50,119 @@
                     </td>
                     <td style="width: 137px" rowspan="2" align="left">{{items.Match_Master}}<br>{{items.Match_Guest}}
                     </td>
-                    <td style="width: 29px"><a href="javascript:" title="1:0"
-                                               v-if="items.Match_Bd10!=null&&items.Match_Bd10!='0'"><font>{{items.Match_Bd10}}</font></a>
+                    <td style="width: 29px">
+                      <a href="javascript:" title="1:0"
+                         @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Master,items.Match_Bd10,'0','Match_Bd10','盘口：1:0')"  v-if="items.Match_Bd10!=null&&items.Match_Bd10!='0'">
+                        <font>{{items.Match_Bd10}}</font></a>
                     </td>
-                    <td style="width: 31px"><a href="javascript:" title="2:0"
-                                               v-if="items.Match_Bd20!=null&&items.Match_Bd20!='0'"><font>{{items.Match_Bd20}}</font></a>
+                    <td style="width: 31px">
+                      <a href="javascript:" title="2:0"
+                         @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Master,items.Match_Bd20,'0','Match_Bd20','盘口：2:0')"   v-if="items.Match_Bd20!=null&&items.Match_Bd20!='0'">
+                        <font>{{items.Match_Bd20}}</font></a>
                     </td>
-                    <td style="width: 30px"><a href="javascript:" title="2:1"
-                                               v-if="items.Match_Bd21!=null&&items.Match_Bd21!='0'"><font>{{items.Match_Bd21}}</font></a>
+                    <td style="width: 30px">
+                      <a href="javascript:" title="2:1"
+                         @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Master,items.Match_Bd21,'0','Match_Bd21','盘口：2:1')"    v-if="items.Match_Bd21!=null&&items.Match_Bd21!='0'">
+                        <font>{{items.Match_Bd21}}</font></a>
                     </td>
-                    <td style="width: 30px"><a href="javascript:" title="3:0"
-                                               v-if="items.Match_Bd30!=null&&items.Match_Bd30!='0'"><font>{{items.Match_Bd30}}</font></a>
+                    <td style="width: 30px">
+                      <a href="javascript:" title="3:0"
+                         @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Master,items.Match_Bd30,'0','Match_Bd30','盘口：3:0')"   v-if="items.Match_Bd30!=null&&items.Match_Bd30!='0'">
+                        <font>{{items.Match_Bd30}}</font></a>
                     </td>
-                    <td style="width: 30px"><a href="javascript:" title="3:1"
-                                               v-if="items.Match_Bd31!=null&&items.Match_Bd31!='0'">
+                    <td style="width: 30px">
+                      <a href="javascript:" title="3:1"
+                         @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Master,items.Match_Bd31,'0','Match_Bd31','盘口:3:1')"  v-if="items.Match_Bd31!=null&&items.Match_Bd31!='0'">
                       <font>{{items.Match_Bd31}}</font></a></td>
-                    <td style="width: 32px"><a href="javascript:" title="3:2"
-                                               v-if="items.Match_Bd32!=null&&items.Match_Bd32!='0'"><font>{{items.Match_Bd32}}</font></a>
+                    <td style="width: 32px">
+                      <a href="javascript:" title="3:2"
+                         @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Master,items.Match_Bd32,'0','Match_Bd32','盘口：3:2')"   v-if="items.Match_Bd32!=null&&items.Match_Bd32!='0'">
+                        <font>{{items.Match_Bd32}}</font></a>
                     </td>
-                    <td style="width: 30px"><a href="javascript:" title="4:0"
-                                               v-if="items.Match_Bd40!=null&&items.Match_Bd40!='0'"><font>{{items.Match_Bd40}}</font></a>
+                    <td style="width: 30px">
+                      <a href="javascript:" title="4:0"
+                         @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Master,items.Match_Bd40,'0','Match_Bd40','盘口：4:0')"  v-if="items.Match_Bd40!=null&&items.Match_Bd40!='0'">
+                        <font>{{items.Match_Bd40}}</font></a>
                     </td>
-                    <td style="width: 31px"><a href="javascript:" title="4:1"
-                                               v-if="items.Match_Bd41!=null&&items.Match_Bd41!='0'"><font>{{items.Match_Bd41}}</font></a>
+                    <td style="width: 31px">
+                      <a href="javascript:" title="4:1"
+                         @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Master,items.Match_Bd40,'0','Match_Bd40','盘口：4:0')"  v-if="items.Match_Bd41!=null&&items.Match_Bd41!='0'">
+                        <font>{{items.Match_Bd41}}</font></a>
                     </td>
-                    <td style="width: 31px"><a href="javascript:" title="4:2"
-                                               v-if="items.Match_Bd42!=null&&items.Match_Bd42!='0'"><font>{{items.Match_Bd42}}</font></a>
+                    <td style="width: 31px">
+                      <a href="javascript:" title="4:2"
+                         @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Master,items.Match_Bd42,'0','Match_Bd42','盘口：4:2')"  v-if="items.Match_Bd42!=null&&items.Match_Bd42!='0'">
+                        <font>{{items.Match_Bd42}}</font></a>
                     </td>
                     <td style="width: 31px"><a href="javascript:" title="4:3"
-                                               v-if="items.Match_Bd43!=null&&items.Match_Bd43!='0'"><font>{{items.Match_Bd43}}</font></a>
+                                               @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Master,items.Match_Bd43,'0','Match_Bd43','盘口：4:3')"  v-if="items.Match_Bd43!=null&&items.Match_Bd43!='0'">
+                      <font>{{items.Match_Bd43}}</font></a>
                     </td>
                     <td style="width: 26px" rowspan="2"><a href="javascript:" title="0:0"
-                                                           v-if="items.Match_Bd00!=null&&items.Match_Bd00!='0'"><font>{{items.Match_Bd00}}</font></a>
+                                                           @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Master,items.Match_Bd00,'0','Match_Bd00','盘口：0:0')"  v-if="items.Match_Bd00!=null&&items.Match_Bd00!='0'">
+                      <font>{{items.Match_Bd00}}</font></a>
                     </td>
                     <td style="width: 29px" rowspan="2"><a href="javascript:" title="1:1"
-                                                           v-if="items.Match_Bd11!=null&&items.Match_Bd11!='0'"><font>{{items.Match_Bd11}}</font></a>
+                                                           @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Master,items.Match_Bd11,'0','Match_Bd11','盘口：1:1')"  v-if="items.Match_Bd11!=null&&items.Match_Bd11!='0'">
+                      <font>{{items.Match_Bd11}}</font></a>
                     </td>
                     <td style="width: 30px" rowspan="2"><a href="javascript:" title="2:2"
-                                                           v-if="items.Match_Bd22!=null&&items.Match_Bd22!='0'"><font>{{items.Match_Bd22}}</font></a>
+                                                           @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Master,items.Match_Bd22,'0','Match_Bd22','盘口：2:2')"  v-if="items.Match_Bd22!=null&&items.Match_Bd22!='0'">
+                      <font>{{items.Match_Bd22}}</font></a>
                     </td>
                     <td style="width: 30px" rowspan="2"><a href="javascript:" title="3:3"
-                                                           v-if="items.Match_Bd33!=null&&items.Match_Bd33!='0'"><font>{{items.Match_Bd33}}</font></a>
+                                                           @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Master,items.Match_Bd33,'0','Match_Bd33','盘口：3:3')"  v-if="items.Match_Bd33!=null&&items.Match_Bd33!='0'">
+                      <font>{{items.Match_Bd33}}</font></a>
                     </td>
                     <td style="width: 29px" rowspan="2"><a href="javascript:" title="4:4"
-                                                           v-if="items.Match_Bd44!=null&&items.Match_Bd44!='0'"><font>{{items.Match_Bd44}}</font></a>
+                                                           @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Master,items.Match_Bd44,'0','Match_Bd44','盘口：4:4')"  v-if="items.Match_Bd44!=null&&items.Match_Bd44!='0'"><font>{{items.Match_Bd44}}</font></a>
                     </td>
                     <td style="width: 29px" rowspan="2"><a href="javascript:" title="其它"
-                                                           v-if="items.Match_Bdup5!=null&&items.Match_Bdup5!='0'"><font>{{items.Match_Bdup5}}</font></a>
+                                                           @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},'UP5',items.Match_Bdup5,'0','Match_Bdup5')" v-if="items.Match_Bdup5!=null&&items.Match_Bdup5!='0'">
+                      <font>{{items.Match_Bdup5}}</font></a>
                     </td>
                   </tr>
                   <tr>
-                    <td><a href="javascript:" title="0:1" v-if="items.Match_Bdg10!=null&&items.Match_Bdg10!='0'"><font>{{items.Match_Bdg10}}</font></a>
+                    <td>
+                      <a href="javascript:"
+                         @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Guest,items.Match_Bdg10,'0','Match_Bdg10','盘口：0:1')" title="0:1" v-if="items.Match_Bdg10!=null&&items.Match_Bdg10!='0'">
+                      <font>{{items.Match_Bdg10}}</font></a>
                     </td>
-                    <td><a href="javascript:" title="0:2" v-if="items.Match_Bdg20!=null&&items.Match_Bdg20!='0'"><font>{{items.Match_Bdg20}}</font></a>
+                    <td><a href="javascript:"
+                           @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Guest,items.Match_Bdg20,'0','Match_Bdg20','盘口：0:2')" title="0:2" v-if="items.Match_Bdg20!=null&&items.Match_Bdg20!='0'">
+                      <font>{{items.Match_Bdg20}}</font></a>
                     </td>
-                    <td><a href="javascript:" title="1:2" v-if="items.Match_Bdg21!=null&&items.Match_Bdg21!='0'"><font>{{items.Match_Bdg21}}</font></a>
+                    <td><a href="javascript:"
+                           @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Guest,items.Match_Bdg21,'0','Match_Bdg21','盘口：1:2')"   title="1:2" v-if="items.Match_Bdg21!=null&&items.Match_Bdg21!='0'">
+                      <font>{{items.Match_Bdg21}}</font></a>
                     </td>
-                    <td><a href="javascript:" title="0:3" v-if="items.Match_Bdg30!=null&&items.Match_Bdg30!='0'"><font>{{items.Match_Bdg30}}</font></a>
+                    <td><a href="javascript:"
+                           @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Guest,items.Match_Bdg30,'0','Match_Bdg30','盘口：0:3')"   title="0:3" v-if="items.Match_Bdg30!=null&&items.Match_Bdg30!='0'">
+                      <font>{{items.Match_Bdg30}}</font></a>
                     </td>
-                    <td><a href="javascript:" title="1:3" v-if="items.Match_Bdg31!=null&&items.Match_Bdg31!='0'"><font>{{items.Match_Bdg31}}</font></a>
+                    <td><a href="javascript:"
+                           @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Guest,items.Match_Bdg31,'0','Match_Bdg31','盘口：1:3')" title="1:3" v-if="items.Match_Bdg31!=null&&items.Match_Bdg31!='0'">
+                      <font>{{items.Match_Bdg31}}</font></a>
                     </td>
-                    <td><a href="javascript:" title="2:3" v-if="items.Match_Bdg32!=null&&items.Match_Bdg32!='0'"><font>{{items.Match_Bdg32}}</font></a>
+                    <td><a href="javascript:"
+                           @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Guest,items.Match_Bdg32,'0','Match_Bdg32','盘口：2:3')" title="2:3" v-if="items.Match_Bdg32!=null&&items.Match_Bdg32!='0'">
+                      <font>{{items.Match_Bdg32}}</font></a>
                     </td>
-                    <td><a href="javascript:" title="0:4" v-if="items.Match_Bdg40!=null&&items.Match_Bdg40!='0'"><font>{{items.Match_Bdg40}}</font></a>
+                    <td><a href="javascript:"
+                           @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Guest,items.Match_Bdg40,'0','Match_Bdg40','盘口：0:4')" title="0:4" v-if="items.Match_Bdg40!=null&&items.Match_Bdg40!='0'">
+                      <font>{{items.Match_Bdg40}}</font></a>
                     </td>
-                    <td><a href="javascript:" title="1:4" v-if="items.Match_Bdg41!=null&&items.Match_Bdg41!='0'"><font>{{items.Match_Bdg41}}</font></a>
+                    <td><a href="javascript:"
+                           @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Guest,items.Match_Bdg41,'0','Match_Bdg41','盘口：1:4')" title="1:4" v-if="items.Match_Bdg41!=null&&items.Match_Bdg41!='0'">
+                      <font>{{items.Match_Bdg41}}</font></a>
                     </td>
-                    <td><a href="javascript:" title="2:4" v-if="items.Match_Bdg42!=null&&items.Match_Bdg42!='0'"><font>{{items.Match_Bdg42}}</font></a>
+                    <td><a href="javascript:"
+                           @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Guest,items.Match_Bdg42,'0','Match_Bdg42','盘口：2:4')"  title="2:4" v-if="items.Match_Bdg42!=null&&items.Match_Bdg42!='0'">
+                      <font>{{items.Match_Bdg42}}</font></a>
                     </td>
-                    <td><a href="javascript:" title="3:4" v-if="items.Match_Bdg43!=null&&items.Match_Bdg43!='0'"><font>{{items.Match_Bdg43}}</font></a>
+                    <td><a href="javascript:"
+                           @click="ClickBet('足球单式',key,items.Match_ID,items.Match_Date,{zhu:items.Match_Master,ke:items.Match_Guest},items.Match_Guest,items.Match_Bdg43,'0','Match_Bdg43','盘口：3:4')" title="3:4" v-if="items.Match_Bdg43!=null&&items.Match_Bdg43!='0'">
+                      <font>{{items.Match_Bdg43}}</font></a>
                     </td>
                   </tr>
                   </tbody>
