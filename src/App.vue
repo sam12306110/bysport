@@ -44,7 +44,7 @@
                     <span class="ball">
                       <a href="javascript:;">
                         足球
-                          (<strong class="game_sum" id="FT_games">530</strong>)
+                          (<strong class="game_sum" id="FT_games">{{statistics==2?footballSt.E:footballSt.T}}</strong>)
                       </a>
 
                     </span>
@@ -56,7 +56,7 @@
                           美式足球
                           <span class="ball_rl"></span>
                           橄榄球
-                          (<strong class="game_sum" id="BK_games">86</strong>)
+                          (<strong class="game_sum" id="BK_games">{{statistics==2?basketSt.E:basketSt.T}}</strong>)
                       </a>
                     </span>
               </li>
@@ -66,7 +66,7 @@
                     <span class="ball">
                       <a href="javascript:;">
                            足球
-                          (<strong class="game_sum" id="EFT_games">901</strong>)
+                          (<strong class="game_sum" id="EFT_games">{{footballSt.L}}</strong>)
                       </a>
                     </span>
               </li>
@@ -78,7 +78,7 @@
                           美式足球
                           <span class="ball_rl"></span
                           >橄榄球
-                          (<strong class="game_sum" id="EBK_games_RB">0</strong>)
+                          (<strong class="game_sum" id="EBK_games_RB">{{basketSt.L}}</strong>)
                       </a>
                     </span>
               </li>
@@ -87,8 +87,8 @@
           <div id="type">
             <ul v-if="selectBg=='FT'"  id="tshow3">
               <li class="re">
-                <router-link id="ftn12" class="type_on" :to="'/'" target="showFrame">独赢 ＆ 让球 ＆ 大小 &amp; 单 / 双
-                </router-link>
+                <a href="javascript:;" @click="checkSelect('FT')" id="ftn12" class="type_on" :to="'/'" >独赢 ＆ 让球 ＆ 大小 &amp; 单 / 双
+                </a>
               </li>
               <li class="pd">
                 <router-link id="ftn13" class="type_out" :to="'/waves'" target="showFrame">波胆</router-link>
@@ -103,17 +103,17 @@
                 <router-link id="ftn16" class="type_out" :to="'/comprehensive'" target="showFrame">综合过关</router-link>
               </li>
               <li class="reuls">
-                <a class="type_out" href="/html/qa.html" target="_blank">规则</a>
+                <a class="type_out" href="https://by2258.com/html/qa.html" target="_blank">规则</a>
               </li>
               <li class="result">
-                <a id="ftn17" class="type_out" href="/hg_sports/index/sg/ft" target="showFrame">赛果</a>
+                <router-link id="ftn17" class="type_out" :to="'/footballResult'" target="showFrame">赛果</router-link>
               </li>
             </ul>
             <ul v-if="selectBg=='GBK'||selectBg=='GFT'" id="tshow4">
               <li class="rb">
-                <a id="ftn1" class="type_out" href="/hg_sports/index/ft/gq" target="showFrame">滚球
+                <a id="ftn1" class="type_out" href="javascript:;" target="showFrame">滚球
                   <span class="rb_sum">
-                  (<span class="game_sum" id="subRBFT_games">0</span>)
+                  (<span class="game_sum" id="subRBFT_games">{{selectBg=='GFT'?footballSt.L:basketSt.L}}</span>)
                 </span>
                 </a>
               </li>
@@ -129,10 +129,10 @@
                 </router-link>
               </li>
               <li class="reuls">
-                <a class="type_out" href="/html/qa.html" target="_blank">规则</a>
+                <a class="type_out" href="https://by2258.com/html/qa.html" target="_blank">规则</a>
               </li>
               <li class="result">
-                <a id="ftn22" class="type_out" href="/hg_sports/index/sg/bb" target="showFrame">赛果</a>
+                <router-link  id="ftn22" class="type_out" :to="'/basketResult'" target="showFrame">赛果</router-link>
               </li>
             </ul>
           </div>
@@ -173,7 +173,7 @@
               <Bet :userMy="userMoney"></Bet>
             </div>
             <div v-if="checkRecord=='sr'" id="rec5_div" >
-              <div id="orderBox">
+              <div class="orderBox">
                 <div class="title">
                   <h1>最新十笔交易</h1>
                   <div class="tiTimer"></div>
@@ -187,9 +187,9 @@
             </div>
             <div id="oly_main111">
               <div id="RB_oly">
-                <div id="FT_RB" @click="showRB('FT');" class="oly_tr" >足球(<span id="ftrbnum">6</span>)</div>
+                <div id="FT_RB" @click="showRB('FT');" class="oly_tr" >足球(<span id="ftrbnum">{{footballSt.L}}</span>)</div>
                 <div id="BK_RB" @click="showRB('BK');" class="oly_tr">篮球 / 美式足球 / 橄榄球(<span
-                  id="bkrbnum">0</span>)
+                  id="bkrbnum">{{basketSt.L}}</span>)
                 </div>
               </div>
             </div>
@@ -267,8 +267,34 @@
         menuBg: 'jr',
         selectBg:'FT',
         checkRecord:'jy',
+        statistics:1,
         userMoney: '',
         userName: '',
+        // T 今日
+        // E 早盤  T 今日 L 滾球
+        // A:独赢&让球&大小,B:波胆,C:单 / 双 & 总入球,D:半场 / 全场,E:混合过关,F:冠軍,G:上半场波胆,R:赛果
+        footballSt: {},
+        // 籃球
+        // E 早盤  T 今日 L 滾球
+        // A:让球&大小&单/双,B:混合过关,C:冠軍,R:赛果
+        basketSt: {},
+        tennisSt: {},
+        // 排球
+        // E 早盤  T 今日 L 滾球
+        // A:独赢&让分&大小&单/双,B:赛盘投注,C:混合过关,D:冠軍,R:赛果
+        volleySt: {},
+        // 棒球
+        // E 早盤  T 今日 L 滾球
+        // A:独赢&让分&大小&单/双,B:混合过关,C:冠軍,R:赛果
+        baseSt: {},
+        // 冠军
+        // E 早盤  T 今日 L 滾球
+        // A:独赢&让球&大小&单/双,B:混合过关,C:冠軍,R:赛果
+        championSt: {},
+        // 其他
+        // E 早盤  T 今日 L 滾球
+        // A:独赢&让盘&大小&单/双,B:赛盘投注,C:混合过关,D:冠軍,R:赛果
+        otherSt: {},
       }
     },
     created: function () {
@@ -276,6 +302,7 @@
       _self.nowTime = _self.CurentTime();
       $router.push('/todayBall');
       _self.getUserInfo();
+      _self.eventStatistics();
     },
     mounted: function () {
 
@@ -294,13 +321,14 @@
             window.sessionStorage.setItem('dataType', 1);
             _self.selectBg='FT';
             $router.push('/todayBall');
-
+            _self.statistics=1;
             break;
           case 'zp' :
             _self.menuBg = 'zp';
             window.sessionStorage.setItem('dataType', 2);
             _self.selectBg='FT';
             $router.push('/');
+            _self.statistics=2;
             break;
         }
       },
@@ -318,7 +346,12 @@
         let _self = this;
            switch (ele){
              case 'FT':
-               $router.push('/');
+               let dataType = window.sessionStorage.getItem('dataType');
+               if (dataType === '2') {
+                 this.$router.push('/');
+               } else {
+                 this.$router.push('/toDayBall')
+               }
                _self.selectBg='FT';
                break;
              case  'BK':
@@ -345,6 +378,23 @@
         axios.get('/api/json/center/?r=Money').then(res => {
           this.userMoney = res.data.data.user_money;
           this.userName = res.data.data.user_name
+        }).catch(err => {
+          throw err
+        })
+      },
+      eventStatistics: function () {
+        let _self = this;
+        axios.get('../api/app/member/sport_sum.php'
+        ).then(res => {
+          if (res.status === 200) {
+            _self.footballSt = res.data.ZQ;
+            _self.basketSt = res.data.LQ;
+            _self.tennisSt = res.data.WQ;
+            _self.volleySt = res.data.PQ;
+            _self.baseSt = res.data.BQ;
+            _self.championSt = res.data.GJ;
+            _self.otherSt = res.data.QT;
+          }
         }).catch(err => {
           throw err
         })

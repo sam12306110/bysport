@@ -10,6 +10,8 @@ import rollBall from '@/components/football/rollBall'
 import drugAddiction from '@/components/basketball/drugAddiction'
 import basketComprehensive from  '@/components/basketball/basketComprehensive'
 import basketRollBall from '@/components/basketball/basketRollBall'
+import footballResult from '@/components/football/footballResult'
+import basketResult from '@/components/basketball/basketResult'
 Vue.use(Router)
 
 export default new Router({
@@ -50,6 +52,11 @@ export default new Router({
       component: rollBall
     },
     {
+      path:'/footballResult',
+      name:'footballResult',
+      component:footballResult
+    },
+    {
       path: '/basketRollBall',
       name: 'basketRollBall',
       component: basketRollBall
@@ -64,5 +71,10 @@ export default new Router({
       name: 'basketComprehensive',
       component: basketComprehensive
     },
+    {
+      path:'/basketResult',
+      name:'basketResult',
+      component:basketResult
+    }
   ]
 })
