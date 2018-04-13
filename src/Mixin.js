@@ -184,26 +184,12 @@ let MyMixin = {
             }
             _self.$store.state.sportArr = _self.sportArr1;
           }
-          if (tzType === '2') {
-            _self.$store.state.BetSwitch=true;
-            _self.$store.state.betData.typeName = typename;
-            _self.$store.state.betData.event = event;
-            _self.$store.state.betData.match_id_in = match_id_in;
-            _self.$store.state.betData.baskTime = time;
-            _self.$store.state.betData.zhuKe = zhuKe;
-            _self.$store.state.betData.eventMing = eventMing;
-            _self.$store.state.betData.peiLv = peiLv;
-            _self.$store.state.betData.point_column = point_column;
-            _self.$store.state.betData.pk = pk;
-          }
           if(tzType==='0'){
             _self.$store.state.BetSwitch=true;
-            let times = time.split(/<br\s{0,1}\/?>/);
+            // let times = time.split(/<br\s{0,1}\/?>/);
             _self.$store.state.betData.typeName = typename;
             _self.$store.state.betData.event = event;
             _self.$store.state.betData.match_id_in = match_id_in;
-            _self.$store.state.betData.baskTime = times[0];
-            _self.$store.state.betData.todayTime = times[1];
             _self.$store.state.betData.zhuKe = zhuKe;
             _self.$store.state.betData.eventMing = eventMing;
             _self.$store.state.betData.peiLv = peiLv;

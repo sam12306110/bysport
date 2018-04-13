@@ -91,7 +91,7 @@ html>body #type a, html>body #type_re a {width: auto;}    /* fixes IE6 hack */
 #type a:hover, #type_re a:hover {color: #FF0;}
 #type ul, #type_re ul { margin-left:-11px; width:751px;}/*�ɪG�w�� �����h�X�s*/
 #type .result, #type_re .result{ float:right; padding-right:8px; background: none; width:30px; margin-right:10px; display:inline;}/*�ɪG�a�k*/
-#type .reuls, #type_re .reuls{ float:right; padding-right:8px; background: none; width:30px; margin-right:10px; display:inline;}/
+#type .reuls, #type_re .reuls{ float:right; padding-right:8px; background: none; width:30px; margin-right:10px; display:inline;}
 /*----���k����----*//**/
 #type .type_on:link, #type .type_on:visited, #type_re .type_on:link, #type_re .type_on:visited { color: #F9C100;}
 /*----���k�w�]----*//**/
@@ -380,8 +380,8 @@ html>body #live_box .live_main ul.live_list { padding: 2px 10px 14px;}
 
 /*20140120-left banner*/
 .left_banner { margin-top:8px; margin-bottom:8px;}
-.banner_tw { background:url(433sitebanner_tw.jpg) no-repeat 0 0; width:215px; height:60px; display:block; cursor:pointer;}
-.banner_cn { background:url(433sitebanner_cn.jpg) no-repeat 0 0; width:215px; height:60px; display:block; cursor:pointer;}
+/*.banner_tw { background:url(433sitebanner_tw.jpg) no-repeat 0 0; width:215px; height:60px; display:block; cursor:pointer;}*/
+/*.banner_cn { background:url(433sitebanner_cn.jpg) no-repeat 0 0; width:215px; height:60px; display:block; cursor:pointer;}*/
 /*20140122-select����*/
 .main {  width:233px; width:238px\9; height:auto; min-height:530px; padding-left:8px; padding-left:0px\9; overflow:hidden;}
 
@@ -391,82 +391,12 @@ div#back ul {z-index:990;
 }
 
 div#back ul li {
-  width:85px;/*change*/  /*需個別設定*/
-  height:25px;/*change*/
-  float:left;
-  line-height:25px;/*change*/
-  position:relative;
+  width: 85px; /*change*/ /*需個別設定*/
+  height: 25px; /*change*/
+  float: left;
+  line-height: 25px; /*change*/
+  position: relative;
 }
-/*div#back ul li.lang_top li {height:24px;line-height:24px;}!*子層高度*!*/
-/*div#back ul li.qa li {height:23px;line-height:23px;}!*子層高度*!*/
-/*div#back ul li.qa_on {background-position:0 -25px;}*/
-/*!* ~~~~~~~~~~主圖寬度~~~~~~~~~~ *!*/
-/*div#back ul li.lang_top {width:85px;background:url(head_lang_cn.gif) no-repeat; text-align:left;}*/
-/*div#back ul li.mail {width:70px;background:url(head_mail.gif) no-repeat;text-align:center;}*/
-/*div#back ul li.qa {width:70px;background:url(head_qa.gif) no-repeat;text-align:left;}*/
-/*div#back ul li.home {width:54px;background:url(head_home.gif) no-repeat;text-align:center;}*/
-
-/*div#back a {*/
-  /*display:block;*/
-  /*height:25px;!*change*!*/
-  /*text-decoration:none;*/
-  /*color:#FFF;!*change*!*/
-/*}*/
-/*div#back a:link, div#back a:visited { color:#FFF;}*/
-
-/*div#back li.lang_top li a {height:24px;!*子層高度*!}*/
-/*div#back li.qa li a {height:23px;!*子層高度*!}*/
-/*!*有次層之連結*!*/
-/*div#back li.qa a:link {color:#FFF;}*/
-/*div#back li.lang_top a:link {color:#FFF;}*/
-/*div#back a:hover {*/
-  /*background-position:0 -25px;!*change*!!*需個別設定*!*/
-  /*color:#303030;!*change*!*/
-/*}*/
-/* ~~~~~~~~~~Menu Top img~~~~~~~~~~ */
-/*div#back .lang_top a:link, div#back .lang_top a:visited { color:#FFF;}*/
-/*div#back .lang_top a {background:url(head_lang_cn.gif) no-repeat; padding-left:35px!important;}*/
-/*div#back .mail a {background:url(head_mail.gif) no-repeat; padding-top:1px;}*/
-/*div#back .qa a {background:url(head_qa.gif) no-repeat; padding-left:24px;}*/
-/*div#back .home a {background:url(head_home.gif) no-repeat; padding-top:1px;}*/
-/*!*div#back .lang_top a:hover, *!div#back .mail a:hover, !*div#back .qa a:hover,*! div#back .home a:hover*/
-                                /*{background-position:0 -25px;}*/
-
-/*!*Menu Level2*!*/
-/*ul.pd { top:0;}!*change*!*/
-/*div#back ul ul.pd {*/
-  /*display:none;*/
-  /*font-size:100%;*/
-  /*padding:0;*/
-/*}*/
-/*div#back ul li:hover ul.pd {*/
-  /*display:block;*/
-  /*position:absolute;*/
-  /*z-index:10;*/
-/*}*/
-/*div#back ul ul.pd li {*/
-  /*float:none;*/
-/*}*/
-
-/*!*IE6 Hack*!!**!*/
-/*div#back ul li a:hover ul.pd {*/
-  /*display:block;*/
-  /*position:absolute;*/
-  /*top:0px;!*change*!*/
-  /*z-index:1000; margin-top:0; margin-left:-1px;*/
-/*}*/
-/*div#back ul li table {*/
-  /*border-collapse:collapse;*/
-  /*border:none;*/
-  /*position:absolute;*/
-  /*top:0;*/
-  /*left:0;*/
-/*}*/
-
-
-
-
-/*height*/
 .vi { display:none;}
 
 
